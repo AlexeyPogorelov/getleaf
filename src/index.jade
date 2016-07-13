@@ -9,7 +9,117 @@ html(lang='en')
 
 		include ./partials/navigation.jade
 
-		//- code HERE
+		section.main-presentation
+			.main-background-image
+			.cover-holder
+				.content-holder
+					h1 Grow with <b>LEAF</b>
+					h4 Growing your own cannabis has never been easier
+					.play-button-holder.iconset-play-1(data-modal="#main-video-modal")
+			form(action="#").subscribe-holder
+				.input-group.subscribe-input-field
+					i.fa.fa-envelope(aria-hidden="true")
+					input(type="text" placeholder="E-mail")
+				.input-group.subscribe-button-field
+					button(type="submit") Get invite
+
+		section.main-gallery#main-gallery
+			mixin gallery (video, description)
+				li.gallery
+					.video-holder
+						video(poster= video + '.gif' muted)
+							source(src= video + ".mp4" type="video/mp4")
+							source(src= video + ".ogg" type="video/ogg")
+							Your browser does not support HTML5 video.
+					.description
+						span= description
+			ul.gallerey-container
+				+gallery(
+					'http://pogorelov.cc.ua/getleaf/img/content/leaf_videos/1_color',
+					'Grow procces timelapse'
+				)
+				+gallery(
+					'http://pogorelov.cc.ua/getleaf/img/content/leaf_videos/2_1_color',
+					'Remote control by app'
+				)
+				+gallery(
+					'http://pogorelov.cc.ua/getleaf/img/content/leaf_videos/3_color',
+					'Prices temperature and humidity control'
+				)
+				+gallery(
+					'http://pogorelov.cc.ua/getleaf/img/content/leaf_videos/4_color',
+					'Nutrients cartridges with automatic dosing'
+				)
+				+gallery(
+					'http://pogorelov.cc.ua/getleaf/img/content/leaf_videos/5_color',
+					'Optional hookup for automatic water changes'
+				)
+				+gallery(
+					'http://pogorelov.cc.ua/getleaf/img/content/leaf_videos/6_color',
+					'Smell preventing carbon filter'
+				)
+				+gallery(
+					'http://pogorelov.cc.ua/getleaf/img/content/leaf_videos/7_color',
+					'Grow procces timelapse'
+				)
+				+gallery(
+					'http://pogorelov.cc.ua/getleaf/img/content/leaf_videos/8_color',
+					'Grow procces timelapse'
+				)
+
+		section.more-about
+			h2 More about <b>LEAF</b>
+
+			ul.tabs-holder
+				li.tab.active(data-tab="interactive")
+					span Growbox
+				li.tab(data-tab="mobileapp")
+					span Mobile application
+			.interactive#interactive
+				.interactive-layer-1
+				.interactive-layer-2
+				.interactive-layer-3
+			.mobileapp#mobileapp
+
+		section.benefits
+			h2 Benefits
+			ul.benefits-holder
+				mixin benefit (icon, header, description)
+					li.benefit
+						.image
+							img(src= icon, alt= header)
+						.description
+							h4= header
+							p= description
+				+benefit (
+					'http://pogorelov.cc.ua/getleaf/img/content/benefit-1.png',
+					'No previous knowledge required',
+					'Create a list with all possible keywords that fit'
+				)
+				+benefit (
+					'http://pogorelov.cc.ua/getleaf/img/content/benefit-1.png',
+					'No harmful chemicals or pesticides',
+					'Create a list with all possible keywords that fit'
+				)
+				+benefit (
+					'http://pogorelov.cc.ua/getleaf/img/content/benefit-1.png',
+					'Save money',
+					'Create a list with all possible keywords that fit'
+				)
+
+		section.as-seen-on
+			h2 As seen on
+			ul.logos-holder
+				li.logo
+					img(src="http://pogorelov.cc.ua/getleaf/img/content/logo-tc.png", alt="tc")
+				li.logo
+					img(src="http://pogorelov.cc.ua/getleaf/img/content/logo-eng.png", alt="eng")
+				li.logo
+					img(src="http://pogorelov.cc.ua/getleaf/img/content/logo-dt.png", alt="dt")
+				li.logo
+					img(src="http://pogorelov.cc.ua/getleaf/img/content/logo-tec.png", alt="tec")
+				li.logo
+					img(src="http://pogorelov.cc.ua/getleaf/img/content/logo-hyb.png", alt="hyb")
 
 		include ./partials/footer.jade
 		include ./partials/modals.jade

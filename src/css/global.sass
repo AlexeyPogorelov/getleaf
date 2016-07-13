@@ -1,3 +1,4 @@
+@import _mixins
 
 *
 	margin: 0
@@ -157,14 +158,17 @@ textarea
 
 // INPUT
 input
-	background-color: #f7f7f7
-	border: 1px solid #e6e6e6
+	height: 64px
+	background-color: rgba(255, 255, 255, 0.8)
+	border-radius: 10px
+	appearance: none
+
+	border: none
 	outline-color: transparent
-	outline-width: 5px
+	// outline-width: 5px
+	// transition: outline-color .4s
 	padding-left: 20px
 	padding-right: 20px
-	transition: outline-color .4s
-	height: 49px
 	margin-bottom: 20px
 	@media (max-width: $mobile-large)
 		padding-left: 8px
@@ -172,10 +176,10 @@ input
 	&:focus
 		outline: none
 	&::placeholder
-		font-size: 15px
-		font-weight: 600
-		@media (max-width: $mobile-large)
-			font-weight: 500
+		color: grey
+		font-family: 'Gotham Pro'
+		font-size: 18px
+		font-weight: 400
 //	END INPUT
 
 // CHECKBOX
@@ -568,9 +572,20 @@ input
 
 button, .btn, input[type="button"]
 	border: none
+	background: none
+	border-radius: 10px
 	cursor: pointer
+	color: #fff
+	background-color: $main-color
 	display: inline-block
-	&.focus, &.active, &:focus, &:hover
+	white-space: nowrap
+	text-overflow: ellipsis
+	overflow: hidden
+	padding: 23px 37px
+	font-size: 18px
+	font-weight: 500
+	line-height: 1em
+	&.focus, &:focus, &:hover
 		text-decoration: none
 	&:active, &:focus
 		outline: none
