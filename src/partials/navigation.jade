@@ -1,0 +1,157 @@
+.preloader
+	.after
+
+.grid
+	.container
+		.line-1
+		.line-2
+		.line-3
+		.line-4
+		.line-5
+		.line-6
+
+.main-navigation(class= headerclass ? headerclass : '')
+	.block-holder
+		.logotype-holder
+			a(href="test.html")
+				img(src="img/icons/meatstudies.svg", alt="MEATSTUDIES")
+			.cities-list-holder
+				.label
+					span Studies
+					//- .icon
+				ul
+					li
+						span Kyiv
+					//- li
+					//- 	span Lviv
+					//- li
+					//- 	span Cherkassy
+					//- li
+					//- 	span Dnepr
+					//- li
+					//- 	span Luck
+					//- li
+					//- 	span Drabiv
+		ul.navigation-pannel
+			li
+				a(href="events.html")
+					span события
+			li
+				a(href="course.html")
+					span курсы
+			li
+				a(href="about.html")
+					span о нас
+			li
+				a(href="blog.html")
+					span блог
+			li
+				a(href="videos.html")
+					span видео
+		.controls-holder
+			a(href="search.html" data-modal="#search-modal").control.search-button
+				i.search-icon-1
+				span Пошук
+			//- a(href="login.html" data-modal="#login-modal").login-button
+				i.login-icon-1
+				span Логін
+			a.control.profile-button(href="profile.html" data-tooltip="#profile-messages-modal")
+				.badge 22
+				.profile-image(style="background-image: url(http://i0.wp.com/blog.happy-chantilly.com/wp-content/uploads/2014/10/pink_blue_hair_couleur_cheveux-_rose_bleu_colorful-_pastel_hairs20.jpg?w=581)")
+
+.mobile-navigation
+	.block-holder
+		.logotype-holder
+			a(href="test.html")
+				img(src="img/icons/meatstudies.svg", alt="MEATSTUDIES")
+			.cities-list-holder
+				.label
+					span Studies
+					//- .icon
+				ul
+					li
+						span Kyiv
+				//- 	li
+				//- 		span Lviv
+				//- 	li
+				//- 		span Cherkassy
+				//- 	li
+				//- 		span Dnepr
+				//- 	li
+				//- 		span Luck
+				//- 	li
+				//- 		span Drabiv
+		.controls-holder
+			a(href="search.html" data-modal="#search-modal").control.search-button
+				i.search-icon-1
+				span Пошук
+			//- a(href="login.html" data-modal="#login-modal").login-button
+				i.login-icon-1
+				span Логін
+			a.control.profile-button(href="profile.html" data-tooltip="#profile-messages-modal")
+				.badge 22
+				.profile-image(style="background-image: url(http://i0.wp.com/blog.happy-chantilly.com/wp-content/uploads/2014/10/pink_blue_hair_couleur_cheveux-_rose_bleu_colorful-_pastel_hairs20.jpg?w=581)")
+			.gamburger.control(data-modal="#mobile-menu")
+				a(href="mobile-navigation.html")
+					img(src="img/icons/gamburger-gray.svg", alt="gamburger")
+
+.modal-holder#mobile-menu(data-cross="cross-navigation")
+	.modal-content
+		.modal-container
+			.label
+				span menu
+			.popup-navigation
+				form(action="#").search-form
+					.input-group
+						input(type="text")
+						input(type="submit" value="f002")
+
+				ul.navigation-pannel
+					li
+						a(href="index.html")
+							span Главная
+					li
+						a(href="blog.html")
+							span Блог
+					li
+						a(href="about.html")
+							span О нас
+					li
+						a(href="article.html")
+							span Статья
+					li
+						a(href="course.html")
+							span Курсы
+					li
+						a(href="course-single.html")
+							span Курс
+					li
+						a(href="course-typical.html")
+							span Курс typical
+					li
+						a(href="event-smart.html")
+							span Событие smart
+					li
+						a(href="event-typical-full.html")
+							span Событие typical full
+					li
+						a(href="course-report.html")
+							span Курс отчет
+					li
+						a(href="404.html")
+							span 404
+					li
+						a(href="calendar.html")
+							span Календарик
+					li
+						a(href="teachers-materials.html")
+							span Материалы
+					li
+						a(href="profile-course-page.html")
+							span Курс профиль
+					li
+						a(href="feed-page.html")
+							span Фид
+					li
+						a(href="home-work-lections.html")
+							span Домашние задания
