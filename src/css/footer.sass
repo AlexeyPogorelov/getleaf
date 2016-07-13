@@ -1,1 +1,44 @@
 @import _mixins
+
+.footer
+	background-color: $main-color
+	color: white
+	font-size: 17px
+	font-weight: 400
+	line-height: 1.438em
+	letter-spacing: 0
+	font-size: 0
+	padding: 60px 40px
+	.copyright, .socials-holder
+		display: inline-block
+		vertical-align: middle
+		width: 50%
+	.copyright
+		&, a
+			color: white
+			font-size: 17px
+			font-weight: 400
+			line-height: 1em
+			letter-spacing: 1px
+		a
+			position: relative
+			&:after
+				content: ''
+				position: absolute
+				bottom: -7px
+				left: 0
+				right: 0
+				height: 2px
+				background-image: #999
+				background-image: repeating-linear-gradient(90deg, #fff 0, #fff 10px, transparent 10px, transparent 20px)
+	.socials-holder
+		text-align: right
+		li
+			display: inline-block
+			vertical-align: middle
+			margin-left: 60px
+			a
+				color: white
+				font-size: 25px
+				font-weight: 400
+				line-height: 1em
