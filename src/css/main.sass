@@ -350,7 +350,7 @@ section.faq
 	margin-top: 189px
 	.section-header
 		text-align: center
-		margin-bottom: 50px
+		margin-bottom: 54px
 		h2
 			color: $main-color
 			font-size: 46px
@@ -358,37 +358,80 @@ section.faq
 			line-height: 1em
 			letter-spacing: 3.4px
 	.accordion
-		margin: 0 auto
+		margin: 0 auto 128px
 		width: 800px
 		.panel
-			background-color: #fcfcfc
-			border: 1px solid #f5f5f5
+			background-color: #f6f6f6
+			border: 1px solid #e5e5e5
 			border-radius: 10px
-			padding: 30px
-			transition: border .3s, background .3s
-			&:hover
-				background-color: #d4faee
-				border-color: #c9f0e4
+			padding: 28px 29px
+			margin-bottom: 20px
+			transition: border .3s, background .3s, padding .3s
+			// &:hover
+			// 	background-color: #d4faee
+			// 	border-color: #c9f0e4
 			.panel-heading
+				position: relative
+				margin-bottom: 23px
+				padding: 0
+				cursor: pointer
+				transition: margin .3s, padding .3s
 				.panel-title
 					&, a
 						color: black
 						font-size: 17px
 						font-weight: 500
 						letter-spacing: 0.74px
-						line-height: 1.875em
+						line-height: 1.2em
+						transition: color .3s
+				&:after
+					content: ""
+					color: grey
+					font-family: FontAwesome
+					font-size: 35px
+					font-weight: 400
+					line-height: 1em
+					position: absolute
+					right: 0
+					top: -6px
+					transform: rotateZ(-180deg)
+					transition: transform .3s, top .3s, color .3s
 			.panel-collapse
 				color: grey
 				font-size: 13px
 				font-weight: 400
-				line-height: 1.25em
-				&.collapse
-				&.in
+				line-height: 1.6em
+
+				overflow: hidden
+				transition: height .3s
+			&.collapsed
+				background-color: #fcfcfc
+				border: 1px solid #f5f5f5
+				padding: 0 29px
+				.panel-heading
+					padding: 28px 0
+					margin-bottom: 0
+					&:after
+						transform: rotateZ(0)
+						top: 22px
+						&:hover
+							color: #00bf82
+				.panel-collapse
+					height: 0
+				&:hover
+					background-color: #d4faee
+					border-color: #c9f0e4
+					.panel-heading
+						&:after
+							color: #00bf82
+					.panel-title
+						&, a
+							color: #00bf82
 
 section.as-seen-on
 	text-align: center
 	background-color: #fafafa
-	padding: 100px 0
+	padding: 52px 0 66px
 	h2
 		color: $main-color
 		font-size: 46px
@@ -397,10 +440,10 @@ section.as-seen-on
 		letter-spacing: 2px
 	.logos-holder
 		max-width: 1280px
-		margin: 0 auto
+		margin: -3px auto 0
 		.logo
 			display: inline-block
-			margin: 40px 40px
+			margin: 44px 63px
 			vertical-align: middle
 			// img
 
@@ -410,12 +453,12 @@ section.subscribe-section
 	// height: 580px
 	text-align: center
 	.content-holder
-		padding: 200px 0
+		padding: 223px 0 205px
 	h1, h2, h3
 		color: white
-		font-size: 46px
+		font-size: 48px
 		line-height: 1.3em
-		font-weight: 500
+		font-weight: 600
 		letter-spacing: 2px
 		margin-bottom: 26px
 		b
