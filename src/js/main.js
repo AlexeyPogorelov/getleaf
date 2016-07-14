@@ -317,6 +317,22 @@ $(document).on('ready', function () {
 			return plg;
 		})();
 
+		// #interactive
+		var interactive = (function () {
+			var $interactive = $('#interactive');
+			$interactive
+				.find('.layer-trigger-1, .layer-trigger-2, .layer-trigger-3, .layer-trigger-4, .layer-trigger-5, .layer-trigger-6, .layer-trigger-7, .layer-trigger-8, .layer-trigger-9')
+				.hover(
+						function () {
+							$interactive.addClass('tooltip-visible');
+						},
+						function () {
+							$interactive.removeClass('tooltip-visible');
+						}
+					);
+
+		})();
+
 		// tooltips
 		var tooltips = (function () {
 
@@ -481,10 +497,12 @@ $(document).on('ready', function () {
 				var top;
 				top = $(this).scrollTop();
 
-				if ( top < 2 && mainNavigationFixed !== 1 ) {
+				if ( top < 6 ) {
+					if (mainNavigationFixed === 1) return;
 					$mainNavigation.removeClass('fixed');
 					mainNavigationFixed = 1;
-				} else if ( mainNavigationFixed !== 2 ) {
+				} else {
+					if (mainNavigationFixed === 2) return;
 					$mainNavigation.addClass('fixed');
 					mainNavigationFixed = 2;
 				}

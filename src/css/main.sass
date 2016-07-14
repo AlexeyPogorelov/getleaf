@@ -144,7 +144,7 @@ section.main-presentation
 			h4, h5, h6
 				color: white
 				font-size: 23px
-				font-weight: 500
+				font-weight: 600
 				line-height: 1em
 				margin: 16px 0 0
 	.play-button-holder
@@ -159,9 +159,32 @@ section.main-presentation
 		// height: 124px
 		padding: 30px 0
 		z-index: 1
+		button, .btn, input[type="button"]
+			font-size: 17px
+			letter-spacing: 1px
+		.label
+			color: #999
+			font-size: 17px
+			font-weight: 600
+			line-height: 1
+			letter-spacing: 1px
+			margin-bottom: 20px
 
 section.main-gallery
 	margin: 25px 0 40px
+	h2
+		color: #d7d7d7
+		font-size: 55px
+		font-weight: 600
+		letter-spacing: 3px
+		line-height: 1em
+		text-align: center
+		margin: 91px 0 59px
+		b
+			color: $main-color
+			font-weight: 700
+			letter-spacing: 3px
+
 	.gallerey-container
 		text-align: center
 		font-size: 0
@@ -208,6 +231,7 @@ section.main-gallery
 				font-size: 17px
 				font-weight: 500
 				line-height: 1.35
+				letter-spacing: 1px
 				transition: opacity .3s
 			&:hover
 				.video-holder
@@ -217,21 +241,25 @@ section.main-gallery
 					opacity: 0
 
 section.more-about
-	margin: 140px 0 40px
+	margin: 132px 0 0
+	padding-bottom: 40px
+	overflow: hidden
 	text-align: center
+	$more-about-mobile-media: 890px
 	h2
-		font-size: 46px
 		line-height: 1em
 		color: #d7d7d7
 		font-weight: 600
-		letter-spacing: 2px
-		margin-bottom: 56px
+		margin-bottom: 26px
+
+		font-size: 55px
+		letter-spacing: 3px
 		b
 			color: $main-color
 			font-weight: 700
-			letter-spacing: 2px
+			letter-spacing: 3px
 	.tabs-holder
-		margin-top: 56px
+		margin-top: 26px
 		text-align: center
 		.tab
 			display: inline-block
@@ -239,8 +267,9 @@ section.more-about
 			color: #999
 			cursor: pointer
 			font-size: 23px
-			font-weight: 500
+			font-weight: 600
 			line-height: 1em
+			letter-spacing: 2px
 			margin: 0 16px
 			position: relative
 			transition: color .1s
@@ -266,13 +295,98 @@ section.more-about
 					display: none
 			span
 	.interactive
-		margin: 60px auto
+		margin: 82px auto 54px
 		position: relative
-		height: 600px
-		width: 643px
+		height: 644px
+		height: 44vw
+		// TODO remove margin left
+		// margin-left: 13px
 		%trigger
 			position: absolute
-			opacity: 0
+			// opacity: 0
+			cursor: pointer
+			white-space: nowrap
+			z-index: 1
+			height: 15px
+			span
+				color: #777
+				font-size: 17px
+				font-weight: 300
+				line-height: 1em
+				padding: 14px
+				letter-spacing: 1px
+				text-align: right
+				transition: color .3s
+				@media (max-width: $more-about-mobile-media)
+					color: transparent
+					pointer-events: none
+			.tooltip
+				backdrop-filter: blur(2px)
+				position: absolute
+				opacity: 0
+				top: 30px
+				left: -25px
+				pointer-events: none
+				background-color: rgba(255, 255, 255, 0.8)
+				border-radius: 10px
+				text-align: left
+				width: 360px
+				z-index: 3
+				visibility: hidden
+				white-space: normal
+
+				padding: 25px
+				transform: translateY(20px) translateZ(1px)
+				transition: opacity .3s, transform .3s
+				// @media (max-width: $more-about-mobile-media)
+					// transform: translateX(-50%) translateZ(1px)
+				&, p
+					color: grey
+					font-size: 13px
+					font-weight: 400
+					line-height: 1.25em
+			&:after
+				content: ''
+				display: block
+				position: absolute
+				background: black
+				height: 2px
+				opacity: 0.5
+				top: 50%
+				left: 100%
+				@media (max-width: $more-about-mobile-media)
+					display: none
+			&:before
+				content: ''
+				display: block
+				position: absolute
+				background: black
+				border-radius: 50%
+				height: 6px
+				width: 6px
+				opacity: 0.5
+				margin-top: -2px
+				top: 50%
+				right: -100%
+				@media (max-width: $more-about-mobile-media)
+					width: 15px
+					height: 15px
+					opacity: 0.3
+					background-color: #00bf82
+					border: 3px solid #56ffc9
+			&:hover
+				span
+					color: $main-color
+					@media (max-width: $more-about-mobile-media)
+						color: transparent
+				.tooltip
+					visibility: visible
+					opacity: 1
+					transform: translateY(0) translateZ(1px)
+		&.tooltip-visible
+			%trigger:not(:hover)
+				opacity: 0
+				pointer-events: none
 		%layer
 			position: absolute
 			left: 0
@@ -282,51 +396,224 @@ section.more-about
 			opacity: 0
 			pointer-events: none
 			transition: opacity .3s
+			background-repeat: no-repeat
+			background-position: 50% 50%
+			background-size: contain
+		.interactive-layer-0
+			@extend %layer
+			opacity: 1
 		.interactive-layer-1
 			@extend %layer
 		.interactive-layer-2
 			@extend %layer
 		.interactive-layer-3
 			@extend %layer
+		.interactive-layer-4
+			@extend %layer
+		.interactive-layer-5
+			@extend %layer
+		.interactive-layer-6
+			@extend %layer
+		.interactive-layer-7
+			@extend %layer
+		.interactive-layer-8
+			@extend %layer
+		.interactive-layer-9
+			@extend %layer
 		.layer-trigger-1
 			@extend %trigger
-			left: 0
-			top: 0
-			height: 100%
-			width: 50%
+			transform: translateX(-100%)
+			left: 22%
+			top: 11%
+			span
+				padding-left: 0
+				padding-right: 14px
+			&:after
+				width: 248px
+				width: 20.2vw
+			&:before
+				margin-right: -6px
+				right: -248px
+				right: -20.2vw
 			&:hover
 				& ~ .interactive-layer-1
 					opacity: 1
 		.layer-trigger-2
 			@extend %trigger
-			left: 50%
-			top: 0
-			height: 100%
-			width: 50%
+			transform: translateX(-100%)
+			left: 27%
+			top: 19.4%
+			span
+				padding-left: 0
+				padding-right: 14px
+			&:after
+				width: 178px
+				width: 14vw
+			&:before
+				margin-right: -6px
+				right: -178px
+				right: -14vw
 			&:hover
 				& ~ .interactive-layer-2
+					opacity: 1
+		.layer-trigger-3
+			@extend %trigger
+			transform: translateX(-100%)
+			left: 27.7%
+			top: 69.3%
+			span
+				padding-left: 0
+				padding-right: 14px
+			&:after
+				width: 178px
+				width: 14vw
+			&:before
+				margin-right: -6px
+				right: -178px
+				right: -14vw
+			&:hover
+				& ~ .interactive-layer-3
+					opacity: 1
+		.layer-trigger-4
+			@extend %trigger
+			transform: translateX(-100%)
+			left: 25.9%
+			top: 76.1%
+			span
+				padding-left: 0
+				padding-right: 14px
+			&:after
+				width: 104px
+				width: 8vw
+			&:before
+				margin-right: -6px
+				right: -104px
+				right: -8vw
+			&:hover
+				& ~ .interactive-layer-4
+					opacity: 1
+		.layer-trigger-5
+			@extend %trigger
+			transform: translateX(-100%)
+			left: 29.1%
+			top: 84.8%
+			span
+				padding-left: 0
+				padding-right: 14px
+			&:after
+				width: 104px
+				width: 8vw
+			&:before
+				margin-right: -6px
+				right: -104px
+				right: -8vw
+			.tooltip
+				top: auto
+				bottom: 100%
+				bottom: calc(100% + 20px)
+			&:hover
+				& ~ .interactive-layer-5
+					opacity: 1
+		.layer-trigger-6
+			@extend %trigger
+			left: 72.2%
+			top: 7.3%
+			&:after
+				width: 260px
+				width: 20vw
+				left: -260px
+				left: -20vw
+			&:before
+				opacity: 0.5
+				left: -260px
+				left: -20vw
+				margin-left: -6px
+			.tooltip
+				left: auto
+				right: -20px
+			&:hover
+				& ~ .interactive-layer-6
+					opacity: 1
+		.layer-trigger-7
+			@extend %trigger
+			left: 78%
+			top: 23.4%
+			.tooltip
+				left: auto
+				right: -20px
+			&:after
+				width: 166px
+				width: 13.4vw
+				left: -166px
+				left: -13.4vw
+			&:before
+				opacity: 0.5
+				left: -166px
+				left: -13.4vw
+				margin-left: -6px
+			&:hover
+				& ~ .interactive-layer-7
+					opacity: 1
+		.layer-trigger-8
+			@extend %trigger
+			left: 71.5%
+			top: 66%
+			&:after
+				width: 300px
+				width: 19.5vw
+				left: -300px
+				left: -19.5vw
+			&:before
+				opacity: 0.5
+				left: -300px
+				left: -19.5vw
+				margin-left: -6px
+			.tooltip
+				left: auto
+				right: -20px
+			&:hover
+				& ~ .interactive-layer-8
+					opacity: 1
+		.layer-trigger-9
+			@extend %trigger
+			left: 70%
+			top: 78.5%
+			&:after
+				width: 260px
+				width: 21.8vw
+				left: -260px
+				left: -21.8vw
+			&:before
+				opacity: 0.5
+				left: -260px
+				left: -21.8vw
+				margin-left: -6px
+			.tooltip
+				left: auto
+				right: -20px
+			&:hover
+				& ~ .interactive-layer-9
 					opacity: 1
 	.mobileapp
 
 section.benefits
 	background-color: #fafafa
-	margin: 155px 0 0
-	padding: 101px 0 76px
+	margin: 69px 0 144px
+	padding: 118px 0 72px
 	text-align: center
-	margin-bottom: 189px
 	h2
 		color: $main-color
-		font-size: 46px
+		font-size: 55px
 		font-weight: 700
+		letter-spacing: 3px
 		line-height: 1em
-		letter-spacing: 2px
 		margin-bottom: 40px
 	.benefits-holder
 		.benefit
 			display: inline-block
 			vertical-align: top
 			text-align: center
-			margin: 58px 83px
+			margin: 45px 83px
 			width: 240px
 			.image
 				img
@@ -347,24 +634,24 @@ section.benefits
 					line-height: 1.3em
 
 section.faq
-	margin-top: 189px
+	margin-top: 147px
 	.section-header
 		text-align: center
-		margin-bottom: 54px
+		margin-bottom: 45px
 		h2
 			color: $main-color
-			font-size: 46px
+			font-size: 35px
 			font-weight: 700
+			letter-spacing: 2px
 			line-height: 1em
-			letter-spacing: 3.4px
 	.accordion
-		margin: 0 auto 128px
+		margin: 0 auto 141px
 		width: 800px
 		.panel
 			background-color: #f6f6f6
 			border: 1px solid #e5e5e5
 			border-radius: 10px
-			padding: 28px 29px
+			padding: 0 29px 28px
 			margin-bottom: 20px
 			transition: border .3s, background .3s, padding .3s
 			// &:hover
@@ -372,8 +659,7 @@ section.faq
 			// 	border-color: #c9f0e4
 			.panel-heading
 				position: relative
-				margin-bottom: 23px
-				padding: 0
+				padding: 28px 0 23px
 				cursor: pointer
 				transition: margin .3s, padding .3s
 				.panel-title
@@ -393,9 +679,15 @@ section.faq
 					line-height: 1em
 					position: absolute
 					right: 0
-					top: -6px
-					transform: rotateZ(-180deg)
+					top: 21px
+					transform: rotateZ(-180deg) translateZ(0)
 					transition: transform .3s, top .3s, color .3s
+				&:hover
+					&:after
+						color: $main-color
+					.panel-title
+						&, a
+							color: $main-color
 			.panel-collapse
 				color: grey
 				font-size: 13px
@@ -407,15 +699,13 @@ section.faq
 			&.collapsed
 				background-color: #fcfcfc
 				border: 1px solid #f5f5f5
-				padding: 0 29px
+				padding-bottom: 0
 				.panel-heading
 					padding: 28px 0
-					margin-bottom: 0
 					&:after
-						transform: rotateZ(0)
-						top: 22px
+						transform: rotateZ(0) translateZ(0)
 						&:hover
-							color: #00bf82
+							color: $main-color
 				.panel-collapse
 					height: 0
 				&:hover
@@ -423,27 +713,27 @@ section.faq
 					border-color: #c9f0e4
 					.panel-heading
 						&:after
-							color: #00bf82
+							color: $main-color
 					.panel-title
 						&, a
-							color: #00bf82
+							color: $main-color
 
 section.as-seen-on
 	text-align: center
 	background-color: #fafafa
-	padding: 52px 0 66px
+	padding: 50px 0 62px
 	h2
 		color: $main-color
-		font-size: 46px
+		font-size: 55px
 		font-weight: 700
 		line-height: 2.563em
-		letter-spacing: 2px
+		letter-spacing: 3px
 	.logos-holder
 		max-width: 1280px
-		margin: -3px auto 0
+		margin: 19px auto 0
 		.logo
 			display: inline-block
-			margin: 44px 63px
+			margin: 36px 63px
 			vertical-align: middle
 			// img
 
@@ -453,14 +743,14 @@ section.subscribe-section
 	// height: 580px
 	text-align: center
 	.content-holder
-		padding: 223px 0 205px
+		padding: 167px 0 204px
 	h1, h2, h3
 		color: white
-		font-size: 48px
 		line-height: 1.3em
 		font-weight: 600
-		letter-spacing: 2px
-		margin-bottom: 26px
+		margin-bottom: 55px
+		font-size: 35px
+		letter-spacing: 1.17px
 		b
 			font-weight: 900
 			letter-spacing: 2px
@@ -473,7 +763,7 @@ section.subscribe-section
 .main-navigation
 	background-color: rgba(255, 255, 255, 0)
 	left: 0
-	padding: 36px 40px
+	padding: 35px 40px
 	top: 0
 	transform: translateZ(0)
 	position: fixed
@@ -481,16 +771,16 @@ section.subscribe-section
 	z-index: 9
 	font-size: 0
 	letter-spacing: 0
-	transition: background .3s
-	&.fixed
-		background-color: rgba(255, 255, 255, 0.5)
-		// position: fixed
+	backdrop-filter: blur(3px)
+	transition: background .3s, padding .3s
 	.logotype-holder, .navigation-pannel
 		display: inline-block
 		vertical-align: middle
 	.logotype-holder
 		padding-left: 8px
 		width: 10%
+		span
+			transition: color .3s
 	.navigation-pannel
 		color: white
 		font-size: 17px
@@ -503,14 +793,53 @@ section.subscribe-section
 		a
 			color: white
 			font-size: 17px
-			font-weight: 300
+			font-weight: 400
 			line-height: 1em
+			position: relative
+			transition: color .1s
+			&:after
+				content: ''
+				position: absolute
+				bottom: -4px
+				left: 0
+				right: 0
+				height: 2px
+				background: $main-color
+				transform: translateY(4px) translateZ(0)
+				opacity: 0
+				transition: opacity .3s, transform .3s
+			&:hover
+				color: $main-color
+				&:after
+					opacity: 1
+					transform: translateY(0) translateZ(0)
+			&.social
+				&:after
+					display: none
 		li
 			display: inline-block
 			vertical-align: middle
-			margin-left: 65px
+			margin-left: 63px
 		.fa
 			font-size: 25px
+			transition: color .3s
+	&.fixed
+		background-color: rgba(255, 255, 255, 0.8)
+		padding: 16px 40px 9px
+		.logotype-holder
+			span
+				color: $main-color
+		.navigation-pannel
+			a
+				color: #5f5f5f
+				transition: color .2s
+				&:hover
+					color: $main-color
+					transition: color .1s
+			.fa
+				color: $main-color
+				&:hover
+					color: $main-color-hover
 
 .main-navigation
 	@media screen and (max-width: $tablet)

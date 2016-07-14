@@ -17,30 +17,31 @@ html(lang='en')
 					h4 Growing your own cannabis has never been easier
 					.play-button-holder.iconset-play-1(data-modal="#main-video-modal")
 			form(action="#").subscribe-holder
+				p.label Our first LEAF’s will be heavily discounted. Don’t miss out
 				.input-group.subscribe-input-field
 					i.fa.fa-envelope(aria-hidden="true")
 					input(type="text" placeholder="E-mail")
 				.input-group.subscribe-button-field
-					button(type="submit") Get invite
+					button(type="submit") Discount, please
 
 		section.main-gallery#main-gallery
+			h2 <b>LEAF </b> Features
 			mixin gallery (video, description)
 				li.gallery
 					.video-holder
 						video(poster= video + '.gif' muted)
 							source(src= video + ".mp4" type="video/mp4")
-							source(src= video + ".ogg" type="video/ogg")
 							Your browser does not support HTML5 video.
 					.description
 						span= description
 			ul.gallerey-container
 				+gallery(
 					'http://pogorelov.cc.ua/getleaf/img/content/leaf_videos/1_color',
-					'Grow procces timelapse'
+					'Grow your medicine automaticallye'
 				)
 				+gallery(
 					'http://pogorelov.cc.ua/getleaf/img/content/leaf_videos/2_1_color',
-					'Remote control by app'
+					'Precise temperature and humidity control'
 				)
 				+gallery(
 					'http://pogorelov.cc.ua/getleaf/img/content/leaf_videos/3_color',
@@ -48,23 +49,23 @@ html(lang='en')
 				)
 				+gallery(
 					'http://pogorelov.cc.ua/getleaf/img/content/leaf_videos/4_color',
-					'Nutrients cartridges with automatic dosing'
-				)
-				+gallery(
-					'http://pogorelov.cc.ua/getleaf/img/content/leaf_videos/5_color',
 					'Optional hookup for automatic water changes'
 				)
 				+gallery(
-					'http://pogorelov.cc.ua/getleaf/img/content/leaf_videos/6_color',
+					'http://pogorelov.cc.ua/getleaf/img/content/leaf_videos/5_color',
 					'Smell preventing carbon filter'
 				)
 				+gallery(
+					'http://pogorelov.cc.ua/getleaf/img/content/leaf_videos/6_color',
+					'Easy step by step video instruction'
+				)
+				+gallery(
 					'http://pogorelov.cc.ua/getleaf/img/content/leaf_videos/7_color',
-					'Grow procces timelapse'
+					'During mode'
 				)
 				+gallery(
 					'http://pogorelov.cc.ua/getleaf/img/content/leaf_videos/8_color',
-					'Grow procces timelapse'
+					'Advanced BIOS LED light'
 				)
 
 		section.more-about
@@ -74,15 +75,54 @@ html(lang='en')
 				li.tab.active(data-tab="interactive")
 					span Growbox
 				li.tab(data-tab="mobileapp")
-					span Mobile application
+					span APP
 			.interactive#interactive
 				.layer-trigger-1
+					span Carbon filter
+					.tooltip
+						p Reprehenderit ipsum laudantium harum ullam quos totam repudiandae iure sunt eius, accusamus, ut doloribus enim placeat praesentium asperiores, corrupti! Provident cum quisquam libero similique? Officiis esse, aperiam laborum consectetur maxime!
 				.layer-trigger-2
+					span HD camera
+					.tooltip
+						p Many people sign up for affiliate programs with the hopes of making some serious money. They advertise a few places and then wait for the money to start pouring in.
 				.layer-trigger-3
-				img.interactive-layer-0(src="http://pogorelov.cc.ua/getleaf/img/content/leaf_pics/box1.jpg", alt="layer")
-				img.interactive-layer-1(src="http://pogorelov.cc.ua/getleaf/img/content/leaf_pics/box1.jpg", alt="layer")
-				img.interactive-layer-2(src="http://pogorelov.cc.ua/getleaf/img/content/leaf_pics/box2.jpg", alt="layer")
-				img.interactive-layer-3(src="http://pogorelov.cc.ua/getleaf/img/content/leaf_pics/box3.jpg", alt="layer")
+					span Water sensing system
+					.tooltip
+						p Nemo rerum error placeat ipsa, asperiores blanditiis doloribus architecto nostrum quam rem nisi perferendis obcaecati voluptatem non, dicta tempora molestiae neque. Inventore debitis praesentium voluptatibus adipisci?
+				.layer-trigger-4
+					span O2 enrichment system
+					.tooltip
+						p Hic soluta, a commodi, deserunt at eius est aut, dicta ipsam laboriosam possimus nulla modi. Sapiente, illo ipsam. Debitis quo provident delectus aliquid deleniti voluptate, ullam nobis nostrum corporis mollitia!
+				.layer-trigger-5
+					span Air control system
+					.tooltip
+						p Perferendis voluptatem fugit cupiditate doloremque explicabo eum tempore, provident praesentium incidunt adipisci sunt voluptatibus. Explicabo dolores sed quas fuga repudiandae alias aliquam quae, necessitatibus doloremque laudantium excepturi, eligendi, nisi nostrum.
+				.layer-trigger-6
+					span BIOS LED
+					.tooltip
+						p Dolores natus laboriosam nam nemo rerum error placeat ipsa, asperiores blanditiis doloribus architecto nostrum quam rem nisi perferendis obcaecati voluptatem non, dicta tempora molestiae neque. Inventore debitis praesentium voluptatibus adipisci?
+				.layer-trigger-7
+					span Toolbox
+					.tooltip
+						p Dolores natus laboriosam nam nemo rerum error placeat ipsa, asperiores blanditiis doloribus architecto nostrum quam rem nisi perferendis obcaecati voluptatem non, dicta tempora molestiae neque. Inventore debitis praesentium voluptatibus adipisci?
+				.layer-trigger-8
+					span Water exchange system
+					.tooltip
+						p Dolores natus laboriosam nam nemo rerum error placeat ipsa, asperiores blanditiis doloribus architecto nostrum quam rem nisi perferendis obcaecati voluptatem non, dicta tempora molestiae neque. Inventore debitis praesentium voluptatibus adipisci?
+				.layer-trigger-9
+					span Dosing system
+					.tooltip
+						p Dolores natus laboriosam nam nemo rerum error placeat ipsa, asperiores blanditiis doloribus architecto nostrum quam rem nisi perferendis obcaecati voluptatem non, dicta tempora molestiae neque. Inventore debitis praesentium voluptatibus adipisci?
+				.interactive-layer-0(style="background-image: url('http://pogorelov.cc.ua/getleaf/img/content/leaf_pics/leaf_standart.jpg')", alt="layer")
+				.interactive-layer-1(style="background-image: url('http://pogorelov.cc.ua/getleaf/img/content/leaf_pics/carbon_filter.jpg')", alt="layer")
+				.interactive-layer-2(style="background-image: url('http://pogorelov.cc.ua/getleaf/img/content/leaf_pics/hd_cam.jpg')", alt="layer")
+				.interactive-layer-3(style="background-image: url('http://pogorelov.cc.ua/getleaf/img/content/leaf_pics/water_sensing.jpg')", alt="layer")
+				.interactive-layer-4(style="background-image: url('http://pogorelov.cc.ua/getleaf/img/content/leaf_pics/o2.jpg')", alt="layer")
+				.interactive-layer-5(style="background-image: url('http://pogorelov.cc.ua/getleaf/img/content/leaf_pics/air_control.jpg')", alt="layer")
+				.interactive-layer-6(style="background-image: url('http://pogorelov.cc.ua/getleaf/img/content/leaf_pics/bios_led.jpg')", alt="layer")
+				.interactive-layer-7(style="background-image: url('http://pogorelov.cc.ua/getleaf/img/content/leaf_pics/toolbox.jpg')", alt="layer")
+				.interactive-layer-8(style="background-image: url('http://pogorelov.cc.ua/getleaf/img/content/leaf_pics/water_exchange.jpg')", alt="layer")
+				.interactive-layer-9(style="background-image: url('http://pogorelov.cc.ua/getleaf/img/content/leaf_pics/dosing_system.jpg')", alt="layer")
 			.mobileapp#mobileapp
 
 		section.benefits
@@ -94,7 +134,7 @@ html(lang='en')
 							img(src= icon, alt= header)
 						.description
 							h4= header
-							p= description
+							p.hidden= description
 				+benefit (
 					'http://pogorelov.cc.ua/getleaf/img/content/benefit-1.png',
 					'No previous knowledge required',
@@ -119,7 +159,7 @@ html(lang='en')
 					.panel-heading(role='tab')
 						h4.panel-title
 							a(aria-expanded='true', aria-controls='collapseOne')
-								| Collapsible Group Item #1
+								| If you are looking for great ways to decorate your home or office
 					.panel-collapse
 						| Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
 				.panel
@@ -128,12 +168,12 @@ html(lang='en')
 							a.collapsed(aria-expanded='false', aria-controls='collapseTwo')
 								| Collapsible Group Item #2
 					.panel-collapse
-						| Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+						| Businesses often become known today through effective marketing. The marketing may be in the form of a regular news item or half column society news in the Sunday newspaper. <br> <br> heart to heart talk with Mr. Brown on <br> <br> These are all advertising. Businesses cannot get away from the force of advertising. If they want to make their products known in the marketplace they have to use some form of advertisement. Advertising is being more and more known as a reasonable and desirable business force. Let’s say you own a department store. The advertising manager of the store is like the managing editor of a daily newspaper with his group of reporters regularly bringing fresh matter to his desk and the different department heads acts as the reporters.
 				.panel
 					.panel-heading(role='tab')
 						h4.panel-title
 							a.collapsed(aria-expanded='false', aria-controls='collapseThree')
-								| Collapsible Group Item #3
+								| The Function Of The Logo
 					.panel-collapse
 						| Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
 
@@ -154,13 +194,13 @@ html(lang='en')
 
 		section.subscribe-section
 			.content-holder
-				h2 Be the first <b>LEAF</b> user
+				h2 Registration required for purchase.<br>Limited quantities available
 				form(action="#").subscribe-holder
 					.input-group.subscribe-input-field
 						i.fa.fa-envelope(aria-hidden="true")
 						input(type="text" placeholder="E-mail")
 					.input-group.subscribe-button-field
-						button(type="submit") Get invite
+						button(type="submit") Get LEAF
 
 		include ./partials/footer.jade
 		include ./partials/modals.jade

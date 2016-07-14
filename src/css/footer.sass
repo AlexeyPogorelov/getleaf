@@ -8,7 +8,7 @@
 	line-height: 1.438em
 	letter-spacing: 0
 	font-size: 0
-	padding: 41px 40px
+	padding: 41px 33px
 	.copyright, .socials-holder
 		display: inline-block
 		vertical-align: middle
@@ -19,18 +19,20 @@
 			font-size: 17px
 			font-weight: 400
 			line-height: 1em
-			letter-spacing: 1px
+			letter-spacing: 0.5px
 		a
 			position: relative
 			&:after
 				content: ''
 				position: absolute
 				bottom: -7px
-				left: 0
+				left: 4px
 				right: 0
 				height: 2px
 				background-image: #999
 				background-image: repeating-linear-gradient(90deg, #fff 0, #fff 10px, transparent 10px, transparent 20px)
+			& + a
+				margin-left: 31px
 	.socials-holder
 		text-align: right
 		li

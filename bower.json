@@ -21,12 +21,12 @@
     "tests"
   ],
   "dependencies": {
-    "normalize-css": "~3.0.3",
+    "normalize-css": "#master",
     "jquery": "~2.2.0",
-    "jquery.browser": "~0.1.0",
-    "font-awesome": "~4.5.0",
-    "wow": "~1.1.2",
-    "animate.css": "animate-css#~3.5.1",
-    "smoothscroll-for-websites": "~1.4.4"
+    "jquery.browser": "#master",
+    "font-awesome": "#master",
+    "wow": "#master",
+    "animate.css": "#master",
+    "smoothscroll-for-websites": "#master"
   }
 }
