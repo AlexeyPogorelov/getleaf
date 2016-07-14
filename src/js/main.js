@@ -319,7 +319,33 @@ $(document).on('ready', function () {
 
 		// #interactive
 		var interactive = (function () {
-			var $interactive = $('#interactive');
+			var activeTab = 0,
+				$moreAbout = $('#more-about'),
+				$tabs = $moreAbout.find('.tabs-holder'),
+				$interactive = $moreAbout.find('#interactive, #mobileapp');
+			$tabs.find('[data-tab="interactive"]')
+				.on('click', function () {
+					$(this).addClass('active').siblings().removeClass('active');
+					$interactive.css({
+						'transform': 'translateX(0px)'
+					});
+					activeTab = 0;
+				});
+			$tabs.find('[data-tab="mobileapp"]')
+				.on('click', function () {
+					$(this).addClass('active').siblings().removeClass('active');
+					$interactive.css({
+						'transform': 'translateX(' + -winWidth + 'px)'
+					});
+					activeTab = 1;
+				});
+			$window.on('resize', function () {
+				if (activeTab === 1) {
+					$interactive.css({
+						'transform': 'translateX(' + -winWidth + 'px)'
+					});
+				}
+			});
 			$interactive
 				.find('.layer-trigger-1, .layer-trigger-2, .layer-trigger-3, .layer-trigger-4, .layer-trigger-5, .layer-trigger-6, .layer-trigger-7, .layer-trigger-8, .layer-trigger-9')
 				.hover(

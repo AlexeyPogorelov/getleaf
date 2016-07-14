@@ -196,7 +196,7 @@ section.main-gallery
 		.gallery
 			display: inline-block
 			overflow: hidden
-			background-color: black
+			background-color: #fff
 			border-radius: 20px
 
 			cursor: pointer
@@ -204,7 +204,7 @@ section.main-gallery
 			position: relative
 
 			width: 270px
-			height: 213px
+			height: 270px
 			.video-holder
 				border-radius: 20px
 				// opacity: 0.6
@@ -294,6 +294,14 @@ section.more-about
 				&:after
 					display: none
 			span
+	.tabs-container
+		overflow: hidden
+		white-space: nowrap
+	.interactive, .mobileapp
+		display: inline-block
+		transition: transform .6s, opacity .6s
+		white-space: normal
+		width: 100%
 	.interactive
 		margin: 82px auto 54px
 		position: relative
@@ -303,7 +311,6 @@ section.more-about
 		// margin-left: 13px
 		%trigger
 			position: absolute
-			// opacity: 0
 			cursor: pointer
 			white-space: nowrap
 			z-index: 1
@@ -595,6 +602,195 @@ section.more-about
 				& ~ .interactive-layer-9
 					opacity: 1
 	.mobileapp
+		margin: 82px auto 54px
+		position: relative
+		height: 644px
+		height: 44vw
+		%trigger
+			position: absolute
+			cursor: pointer
+			white-space: nowrap
+			z-index: 1
+			height: 15px
+			@media (max-width: $more-about-mobile-media)
+				display: none
+			span
+				color: #777
+				font-size: 17px
+				font-weight: 300
+				line-height: 1em
+				padding: 14px
+				letter-spacing: 1px
+				text-align: right
+				transition: color .3s
+				@media (max-width: $more-about-mobile-media)
+					color: transparent
+					pointer-events: none
+			.tooltip
+				position: absolute
+				opacity: 0
+				top: 30px
+				left: -25px
+				pointer-events: none
+				background-color: rgba(255, 255, 255, 0.8)
+				border-radius: 10px
+				text-align: left
+				width: 360px
+				z-index: 3
+				visibility: hidden
+				white-space: normal
+
+				padding: 25px
+				transform: translateY(20px) translateZ(1px)
+				transition: opacity .3s, transform .3s
+				// @media (max-width: $more-about-mobile-media)
+					// transform: translateX(-50%) translateZ(1px)
+				&, p
+					color: grey
+					font-size: 13px
+					font-weight: 400
+					line-height: 1.25em
+			&:after
+				content: ''
+				display: block
+				position: absolute
+				background: black
+				height: 2px
+				opacity: 0.5
+				top: 50%
+				left: 100%
+				@media (max-width: $more-about-mobile-media)
+					display: none
+			&:before
+				content: ''
+				display: block
+				position: absolute
+				background: black
+				border-radius: 50%
+				height: 6px
+				width: 6px
+				opacity: 0.5
+				margin-top: -2px
+				top: 50%
+				right: -100%
+				@media (max-width: $more-about-mobile-media)
+					width: 15px
+					height: 15px
+					opacity: 0.3
+					background-color: #00bf82
+					border: 3px solid #56ffc9
+			&:hover
+				span
+					color: $main-color
+					@media (max-width: $more-about-mobile-media)
+						color: transparent
+				.tooltip
+					visibility: visible
+					opacity: 1
+					transform: translateY(0) translateZ(1px)
+		&.tooltip-visible
+			%trigger:not(:hover)
+				opacity: 0
+				pointer-events: none
+		%layer-label
+			position: absolute
+			text-align: left
+			left: 65%
+			width: 230px
+
+			color: black
+			font-size: 17px
+			font-weight: 500
+			letter-spacing: 1px
+			line-height: 23px
+			@media (max-width: $more-about-mobile-media)
+				left: 37%
+		%layer
+			position: absolute
+			left: 0
+			top: 0
+			height: 100%
+			width: 100%
+			opacity: 0
+			pointer-events: none
+			transition: opacity .3s
+			background-repeat: no-repeat
+			background-position: 50% 50%
+			background-size: contain
+			@media (max-width: $more-about-mobile-media)
+				background-position: 20px 50%
+		.interactive-layer-0
+			@extend %layer
+			opacity: 1
+		.interactive-layer-1
+			@extend %layer
+		.interactive-layer-2
+			@extend %layer
+		.interactive-layer-3
+			@extend %layer
+		.layer-trigger-1
+			@extend %trigger
+			transform: translateX(-100%)
+			left: 22%
+			top: 23%
+			span
+				padding-left: 0
+				padding-right: 14px
+			&:after
+				width: 248px
+				width: 20.2vw
+			&:before
+				margin-right: -6px
+				right: -248px
+				right: -20.2vw
+			&:hover
+				& ~ .interactive-layer-1
+					opacity: 1
+		.layer-trigger-2
+			@extend %trigger
+			transform: translateX(-100%)
+			left: 28.2%
+			top: 42%
+			span
+				padding-left: 0
+				padding-right: 14px
+			&:after
+				width: 178px
+				width: 14vw
+			&:before
+				margin-right: -6px
+				right: -178px
+				right: -14vw
+			&:hover
+				& ~ .interactive-layer-2
+					opacity: 1
+		.layer-trigger-3
+			@extend %trigger
+			transform: translateX(-100%)
+			left: 28%
+			top: 76.3%
+			span
+				padding-left: 0
+				padding-right: 14px
+			&:after
+				width: 178px
+				width: 14vw
+			&:before
+				margin-right: -6px
+				right: -178px
+				right: -14vw
+			&:hover
+				& ~ .interactive-layer-3
+					opacity: 1
+		.layer-label-1
+			@extend %layer-label
+			top: 22%
+		.layer-label-2
+			@extend %layer-label
+			top: 48%
+		.layer-label-3
+			@extend %layer-label
+			top: 72%
 
 section.benefits
 	background-color: #fafafa
