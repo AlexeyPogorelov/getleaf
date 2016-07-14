@@ -1,1 +1,27 @@
 @import _mixins
+
+.subscribe-holder
+	text-align: center
+	.input-group
+		display: inline-block
+		vertical-align: middle
+		&.subscribe-input-field
+			i
+				position: absolute
+				z-index: 1
+				color: #999
+				font-family: FontAwesome
+				font-size: 18px
+				font-weight: 400
+				line-height: 1em
+				top: 50%
+				margin-top: -10px
+				left: 20px
+			input
+				width: 419px
+				opacity: 0.8
+				margin: 0
+				padding-left: 58px
+				background-color: white
+		&.subscribe-button-field
+			margin-left: 16px

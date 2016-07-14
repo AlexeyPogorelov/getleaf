@@ -152,6 +152,16 @@ html(lang='en')
 				li.logo
 					img(src="http://pogorelov.cc.ua/getleaf/img/content/logo-hyb.png", alt="hyb")
 
+		section.subscribe-section
+			.content-holder
+				h2 Be the first <b>LEAF</b> user
+				form(action="#").subscribe-holder
+					.input-group.subscribe-input-field
+						i.fa.fa-envelope(aria-hidden="true")
+						input(type="text" placeholder="E-mail")
+					.input-group.subscribe-button-field
+						button(type="submit") Get invite
+
 		include ./partials/footer.jade
 		include ./partials/modals.jade
 
