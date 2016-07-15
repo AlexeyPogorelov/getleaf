@@ -565,13 +565,13 @@ $(document).on('ready', function () {
 		modestbranding: 0,
 		rel: 0,
 		showinfo: 0,
-		controls: 0,
+		controls: 1,
 		disablekb: 1,
 		enablejsapi: 0,
 		iv_load_policy: 3
 	};
 
-	video = {'videoId': 'sUfqmjM9_VE', 'startSeconds': 159, 'endSeconds': 1220};
+	video = {'videoId': 'XdPbgNkAs5k', 'startSeconds': 0, 'endSeconds': 105};
 
 	window.onYouTubePlayerAPIReady = function () {
 		youTube = new YT.Player('main-video-background', {events: {'onReady': onPlayerReady, 'onStateChange': onPlayerStateChange}, playerVars: playerDefaults});
