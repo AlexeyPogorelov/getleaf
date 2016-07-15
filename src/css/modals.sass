@@ -88,7 +88,10 @@
 		height: 610px
 		background-color: black
 		border-radius: 10px
-		@media (max-width: 980px)
+		@media (max-width: $tablet)
+			background-color: transparent
+			margin: 0
+			height: auto
 			width: 100%
 	.pop-up-video-holder
 		position: absolute
@@ -96,15 +99,21 @@
 		left: 14px
 		right: 14px
 		bottom: 90px
+		@media (max-width: $tablet)
+			position: static
 	.main-video-background
 		height: 100%
 		width: 100%
+		@media (max-width: $tablet)
+			height: calc(100vw / 16 * 9)
 	.subscribe-holder
 		position: absolute
 		text-align: center
 		bottom: 14px
 		left: 0
 		right: 0
+		@media (max-width: $tablet)
+			position: static
 		button, .btn, input[type="button"]
 			font-size: 17px
 			letter-spacing: 1px
@@ -112,8 +121,13 @@
 			padding-left: 0
 			padding-right: 0
 			width: 220px
+			@media (max-width: $tablet)
+				width: 100%
 	.subscribe-input-field
 		width: calc(100% - 270px)
+		@media (max-width: $tablet)
+			margin-top: 40px
+			width: 100%
 		input
 			width: 100%
 	.modal-label
@@ -122,5 +136,7 @@
 		color: #999
 		font-size: 17px
 		font-weight: 500
-		line-height: 15px
+		line-height: 1.3em
 		letter-spacing: 1px
+		@media (max-width: $tablet)
+			padding: 40px 20px

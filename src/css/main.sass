@@ -936,7 +936,7 @@ section.faq
 		margin: 0 auto 141px
 		width: 800px
 		@media (max-width: $tablet)
-			margin: 0 auto 40px
+			margin: 0 auto 100px
 			width: 100%
 			width: calc(100% - 40px)
 		.panel
@@ -1009,7 +1009,7 @@ section.faq
 					pointer-events: all
 					padding: 28px 0
 					@media (max-width: $tablet)
-						padding: 16px 0 23px
+						padding: 16px 0 16px
 					&:after
 						transform: rotateZ(0) translateZ(0)
 						&:hover
@@ -1031,7 +1031,7 @@ section.as-seen-on
 	background-color: #fafafa
 	padding: 50px 0 62px
 	@media (max-width: $tablet)
-		padding: 16px 0 62px
+		padding: 54px 0 68px
 	h2
 		color: $main-color
 		font-size: 55px
@@ -1054,6 +1054,10 @@ section.as-seen-on
 				margin: 16px 0
 			img
 				max-width: 100%
+				@media (max-width: $tablet)
+					// height: 27px
+					width: 83%
+					width: calc(100% - 40px)
 
 section.subscribe-section
 	background: url('http://pogorelov.cc.ua/getleaf/img/content/leaf_pics/foot.jpg') 50% 50% no-repeat
@@ -1062,6 +1066,8 @@ section.subscribe-section
 	text-align: center
 	.content-holder
 		padding: 167px 0 204px
+		@media (max-width: $tablet)
+			padding: 123px 0 90px
 	h1, h2, h3
 		color: white
 		line-height: 1.3em
@@ -1069,15 +1075,23 @@ section.subscribe-section
 		margin-bottom: 55px
 		font-size: 35px
 		letter-spacing: 1.17px
+		@media (max-width: $tablet)
+			font-size: 17px
+			line-height: 1.438em
+			letter-spacing: 1px
+			margin-bottom: 62px
 		b
 			font-weight: 900
 			letter-spacing: 2px
+	.subscribe-holder
+		.input-group
+			@media (max-width: $tablet)
+				margin-bottom: 16px
 
 // --------------------------------------------------
 // MAIN-NAVIGATION
 // --------------------------------------------------
 
-.mobile-navigation,
 .main-navigation
 	background-color: rgba(255, 255, 255, 0)
 	left: 0
@@ -1091,14 +1105,22 @@ section.subscribe-section
 	letter-spacing: 0
 	backdrop-filter: blur(3px)
 	transition: background .3s, padding .3s
+	@media (max-width: $tablet)
+		padding: 21px 0
 	.logotype-holder, .navigation-pannel
 		display: inline-block
 		vertical-align: middle
 	.logotype-holder
 		padding-left: 8px
 		width: 10%
+		@media (max-width: $tablet)
+			padding-left: 19px
 		span
 			transition: color .3s
+	.main-logo
+		@media (max-width: $tablet)
+			font-size: 30px
+			letter-spacing: 3.75px
 	.navigation-pannel
 		color: white
 		font-size: 17px
@@ -1138,12 +1160,24 @@ section.subscribe-section
 			display: inline-block
 			vertical-align: middle
 			margin-left: 63px
+			@media (max-width: $tablet)
+				display: none
+		.gamburger
+			display: none
+			margin-right: 10px
+			@media (max-width: $tablet)
+				display: inline-block
 		.fa
 			font-size: 25px
 			transition: color .3s
 	&.fixed
 		background-color: rgba(255, 255, 255, 0.8)
 		padding: 16px 40px 9px
+		@media (max-width: $tablet)
+			padding: 14px 0 10px
+		.gamburger
+			span
+				background-color: $main-color
 		.logotype-holder
 			span
 				color: $main-color
@@ -1159,19 +1193,6 @@ section.subscribe-section
 				&:hover
 					color: $main-color-hover
 
-.main-navigation
-	@media (max-width: $tablet)
-		display: none
-.mobile-navigation
-	display: block
-	padding: 35px 16px
-	.logotype-holder
-		padding-left: 0
-	.main-logo
-		font-size: 30px
-		letter-spacing: 3.75px
-	@media (min-width: $tablet + 1px)
-		display: none
 
 // --------------------------------------------------
 // MOBILE-NAVIGATION
@@ -1198,69 +1219,74 @@ section.subscribe-section
 	padding: 20px
 
 .cross-top-fixed.cross-navigation
+	// background: url('../img/icons/cross-icon-1.svg') 50% 50% no-repeat
+	// background-size: contain
+	cursor: pointer
 	margin-top: 20px
 	margin-right: 10px
+	position: fixed
+	right: 18px
+	top: 6px
+	height: 20px
+	width: 20px
+	z-index: 11
+	&:before
+		content: "\f00d"
+		color: #cbcbcb
+		font-family: FontAwesome
+		font-size: 25px
+		font-weight: 100
+		line-height: 1em
+		transition: color 0.2s
+	&.animated
+		animation: crossIn 0.5s
+	&:hover
+		&:before
+			color: $main-color
 
 
 // --------------------------------------------------
 // MOBILE MENU
 // --------------------------------------------------
-
 #mobile-menu
-	.modal-content
-		padding: 20px
-	.search-form
-		.input-group
-			margin-bottom: 30px
-			position: relative
-			input[type="text"]
-				padding-left: 40px
-				width: 100%
-			input[type="submit"]
-				//background: none
-				border: none
-				height: 27px
-				left: 11px
-				margin: 0
-				position: absolute
-				top: 9px
-				width: 27px
-				color: transparent
-				background-image: url("../img/icons/search-icon-1.svg")
-				background-size: contain
-	.label
-		color: black
-		font-size: 15px
-		font-weight: 400
-		letter-spacing: 5px
-		line-height: 1em
-		text-transform: uppercase
-		margin-top: 13px
-		margin-bottom: 27px
-	li
-		color: #9e9e9e
-		font-size: 18px
-		font-weight: 500
-		letter-spacing: 1px
-		line-height: 75px
-		text-transform: uppercase
-		&.active
+	.logotype-holder
+		padding: 0 29px
+		margin: 24px 0 12px
+		.main-logo
+			color: $main-color
+			font-size: 30px
+			font-weight: 900
+			letter-spacing: 3.75px
+	ul.navigation-pannel
+		margin-top: 20px
+		padding: 0 20px
+		li
+			margin: 7px 0
+			display: block
 			a
-				color: #000
-				position: relative
-				&:after
-					content: ""
-					background: $main-color
-					position: absolute
-					top: 50%
-					left: -4px
-					right: -4px
-					bottom: 0
-					z-index: -1
-		span
-			text-overflow: ellipsis
-			overflow: hidden
-			white-space: nowrap
-			max-width: 100%
+				display: inline-block
+				padding: 14px 10px
+
+				color: #5f5f5f
+				font-size: 17px
+				font-weight: 400
+				letter-spacing: 1px
+				line-height: 1em
+	ul.socials
+		margin-top: 23px
+		padding: 0 20px 40px
+		text-align: center
+		li
 			display: inline-block
+			margin: 10px 22px
+			&:first-child
+				margin-left: 0
+			&:last-child
+				margin-right: 0
+			.social
+				color: #00bf82
+				font-size: 25px
+				font-weight: 400
+				line-height: 1.563em
+				padding: 10px
 

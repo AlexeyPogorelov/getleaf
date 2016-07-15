@@ -4,45 +4,63 @@
 .main-navigation#main-navigation
 	.content-holder
 		.logotype-holder
-			a(href="test.html").main-logo
+			a(href="#main-presentation").main-logo
 				span leaf
 		ul.navigation-pannel
 			li
-				a(href="events.html")
+				a(href="#main-gallery")
 					span How it works
 			li
-				a(href="course.html")
+				a(href="#more-about")
 					span About
 			li
-				a(href="course.html")
+				a(href="#benefits")
 					span Benefits
 			li
-				a(href="course.html")
+				a(href="#faq")
 					span FAQ
 			li
-				a(href="course.html")
+				a(href="#subscribe-section")
 					span Blog
 			li
-				a.social(href="#")
-					i.fa.fa-facebook-official
+				a.social(href="#", target="_blank")
+					i.fa.fa-facebook-official(aria-hidden="true")
 			li
-				a.social(href="#")
+				a.social(href="#", target="_blank")
 					i.fa.fa-envelope(aria-hidden="true")
-
-.mobile-navigation#mobile-navigation
-	.content-holder
-		.logotype-holder
-			a(href="test.html").main-logo
-				span leaf
-		.navigation-pannel
-			.gamburger
+			li.gamburger(data-modal="#mobile-menu")
 				span
 				span
 				span
 
 .modal-holder#mobile-menu(data-cross="cross-navigation")
-	.content-holder
+	.modal-content
 		.logotype-holder
-			a(href="test.html").main-logo
+			a(href="#main-presentation").main-logo
 				span leaf
 		ul.navigation-pannel
+			li
+				a(href="#main-gallery")
+					span How it works
+			li
+				a(href="#more-about")
+					span About
+			li
+				a(href="#benefits")
+					span Benefits
+			li
+				a(href="#faq")
+					span FAQ
+			li
+				a(href="#subscribe-section")
+					span Blog
+		ul.socials
+			li
+				a.social(href="#", target="_blank")
+					i.fa.fa-facebook-official(aria-hidden="true")
+			li
+				a.social(href="#", target="_blank")
+					i.fa.fa-instagram(aria-hidden="true")
+			li
+				a.social(href="#", target="_blank")
+					i.fa.fa-envelope(aria-hidden="true")

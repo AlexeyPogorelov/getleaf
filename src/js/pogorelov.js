@@ -54,7 +54,7 @@ bodyOverflow = (function () {
 			$body.width( $body.width() )
 				.addClass('fixed');
 
-			$mainNavigation.width( $body.width() - 80 );
+			$mainNavigation.width( $body.width() );
 
 		},
 		unfixBody: function () {

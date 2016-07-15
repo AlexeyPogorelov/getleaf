@@ -9,7 +9,7 @@ html(lang='en')
 
 		include ./partials/navigation.jade
 
-		section.main-presentation
+		section.main-presentation#main-presentation
 			.main-background-image
 			.cover-holder
 				.content-holder
@@ -139,7 +139,7 @@ html(lang='en')
 						span Intellgent alerts
 					.interactive-layer-0(style="background-image: url('http://pogorelov.cc.ua/getleaf/img/content/leaf_pics/phone.jpg')", alt="layer")
 
-		section.benefits
+		section.benefits#benefits
 			h2 Benefits
 			ul.benefits-holder
 				mixin benefit (icon, header, description)
@@ -205,7 +205,7 @@ html(lang='en')
 				li.logo
 					img(src="http://pogorelov.cc.ua/getleaf/img/content/logo-hyb.png", alt="hyb")
 
-		section.subscribe-section
+		section.subscribe-section#subscribe-section
 			.content-holder
 				h2 Registration required for purchase.<br>Limited quantities available
 				form(action="#").subscribe-holder
