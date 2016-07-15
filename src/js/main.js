@@ -366,99 +366,107 @@ $(document).on('ready', function () {
 
 		})();
 
-		// tooltips
-		var tooltips = (function () {
+		// notifications
+		getleaf.notification = (function () {
+			var opened = [],
+				lastTop = 0;
+
+			options = {
+				'notificationClass': 'notification',
+				'marginTop': 10,
+				'timeout': 10000
+			};
 
 			var plg = {
-				opened: [],
-				$body: $('body'),
-				bodyHandler: function (e) {
-					var $self = $(e.target),
-						hasOpenedParent = null;
-					if ( $self.hasClass('opened') ) {
-						hasOpenedParent = true;
+				show: function ( text, selector ) {
+					var $notification, $parent;
+
+					if (!(typeof text === 'string' && text.length > 1)) return false;
+
+					$notification = plg.create( text );
+
+					if (selector) {
+						$parent = $( selector );
 					} else {
-						for (var i = 0; i < $self.parents().length; i++) {
-							if ( $self.parents().eq(i).hasClass('opened') ) {
-								hasOpenedParent = true;
-								break;
-							}
+						$parent = $('body');
+					}
+					if ($parent.length < 1) $parent = $('body');
+					$notification
+						.appendTo( $parent )
+						.one( animationPrefix, function () {
+							plg.hide( $notification );
+						});
+
+					setTimeout(function() {
+						plg.hide( $notification );
+					}, options.timeout);
+
+				},
+				hide: function ($notification) {
+
+					for ( var y = 0; y < opened.length; y++ ) {
+
+						if ($notification === opened[y]) {
+							opened.splice(y, 1);
+							$notification.remove();
 						}
+
 					}
 
-					if ( hasOpenedParent !== true ) {
-						e.preventDefault();
-						e.stopPropagation();
-						tooltips.closeTooltip();
+					if (opened.length === 0) {
+						lastTop = 0;
 					}
 
 				},
-				openTooltip: function ( $modal, $self ) {
-
-					if ( this.opened.length > 0 ) {
-						tooltips.closeTooltip();
+				calculateTop: function () {
+					var top = 0;
+					for (var i = 0; i < opened.length; i++) {
+						top += opened[i].prop('scrollHeight') + options.marginTop;
 					}
-					this.opened.push( $modal );
-					this.opened.push( $self );
-
-					this.$body.addClass('tooltip').on('click', this.bodyHandler);
-
-					$modal.off( transitionPrefix ).addClass('opened');
-					$self.addClass('opened');
-
+					return top;
 				},
-				closeTooltip: function () {
-
-					this.$body.removeClass('tooltip').off('click', this.bodyHandler);
-
-					for ( var y = 0; y < this.opened.length; y++ ) {
-
-						this.opened[y].removeClass('opened');
-
-					}
-
-					this.opened = [];
-
+				create: function (text) {
+					var top = lastTop + options.marginTop;
+					$notification = $('<div>')
+						.addClass(options.notificationClass)
+						.css({
+							'top': top
+						})
+						.html( text );
+					setTimeout(function() {
+						lastTop = top + $notification.prop('scrollHeight');
+						opened.push($notification);
+					}, 1);
+					return $notification;
 				}
 
 			};
 
-			$('[data-tooltip]').on('click', function (e) {
-
-				e.preventDefault();
-
-				var $self = $(this),
-					target = $self.attr('data-tooltip'),
-					$target = $(target);
-
-				if ($target.length) {
-
-					tooltips.openTooltip($target, $self);
-
-				} else {
-
-					console.warn('Ошибка в элементе:');
-					console.log(this);
-					console.warn('Не найдены элементы с селектором ' + target);
-
-				}
-				
-			});
-
-			$window.on('keyup', function (e) {
-
-				// esc pressed
-				if (e.keyCode == '27') {
-
-					tooltips.closeTooltip();
-
-				}
-
-			});
-
-			return plg;
+			return plg.show;
 		})();
 
+		// copy text
+		(function () {
+			var $triggers = $('[data-copy]');
+
+			$triggers.on('click', function() {
+				var $self = $(this),
+					$target = $( $self.attr('data-copy') );
+
+				if ($target.length === 0) return;
+
+				$target.get(0).select();
+
+				try {
+					document.execCommand('copy');
+					getleaf.notification('link copied');
+				} catch (e) {
+					getleaf.notification('Unable to copy');
+					console.error(e);
+				}
+			});
+
+		})();
 
 		// shuffle array
 		Array.prototype.shuffle = function() {

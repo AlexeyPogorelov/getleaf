@@ -56,6 +56,23 @@
 	to
 		opacity: 1
 
+@keyframes notification
+	from
+		opacity: 0
+		transform: translateY(20px) translateZ(0)
+
+	10%
+		opacity: 1
+		transform: translateY(0) translateZ(0)
+
+	90%
+		opacity: 1
+		transform: translateY(0) translateZ(0)
+
+	to
+		opacity: 0
+		transform: translateY(-20px) translateZ(0)
+
 .fadeIn
 	animation: fadeIn 0.3s
 	animation-fill-mode: both
@@ -76,4 +93,7 @@
 	animation-fill-mode: both
 .crossIn
 	animation: crossIn 0.3s
+	animation-fill-mode: both
+.notification
+	animation: notification 2s
 	animation-fill-mode: both

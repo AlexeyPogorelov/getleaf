@@ -1,0 +1,212 @@
+@import _mixins
+
+.leaderboard-header
+	background: url('../img/content/leaderboard-background.jpg') 50% 50% no-repeat
+	background-size: cover
+	text-align: center
+	position: relative
+	padding: 112px 40px 68px
+	margin-bottom: 50px
+	.logotype-holder
+		position: absolute
+		left: 47px
+		top: 36px
+		a
+			span
+	h1
+		color: white
+		font-size: 60px
+		font-weight: 700
+		letter-spacing: 4px
+		line-height: 1em
+		margin: 0
+
+.leaderboard-table
+	margin-top: 70px
+	margin-bottom: 50px
+	counter-reset: leaderboard-table-counter
+	.content-holder
+		margin: auto
+		max-width: 618px
+	.leaderboard-table-counter
+		font-size: 23px
+		font-weight: 700
+		&:after
+			counter-increment: leaderboard-table-counter
+			content: counter(leaderboard-table-counter)
+	table
+		color: grey
+		margin-left: -12px
+		width: 100%
+	thead
+		font-size: 23px
+		font-weight: 700
+		letter-spacing: 2px
+		td
+			padding: 0 0 23px
+			&:first-child
+				span
+					margin-left: -4px
+	tbody
+		font-size: 17px
+		font-weight: 400
+		letter-spacing: 1px
+	tr
+		&.active
+			td
+				position: relative
+				background-color: #e6fcf5
+				color: $main-color
+				&:after
+					content: ''
+					position: absolute
+					left: 0
+					top: 0
+					right: 0
+					bottom: 0
+					border: 1px solid #dff6ef
+					border-right: none
+					border-left: none
+				&:first-child
+					&, &:after
+						border-top-left-radius: 10px
+						border-bottom-left-radius: 10px
+					&:after
+						border-left: 1px solid #dff6ef
+				&:last-child
+					&, &:after
+						border-bottom-right-radius: 10px
+						border-top-right-radius: 10px
+					&:after
+						border-right: 1px solid #dff6ef
+	td
+		padding: 12px 0
+		&:first-child
+			text-align: center
+			width: 1px
+		&:nth-child(2)
+			padding-left: 89px
+			padding-right: 89px
+		&:nth-child(3)
+			width: 1px
+			padding-right: 4px
+			span
+				position: relative
+				left: 29px
+
+.leaderboard-status
+	margin-top: 55px
+	margin-bottom: 71px
+	.status-items
+		letter-spacing: 0
+		font-size: 0
+		margin: auto
+		max-width: 880px
+	.status
+		color: grey
+		display: inline-block
+		vertical-align: top
+		border-radius: 20px
+		background-color: #fafafa
+		text-align: center
+		margin: 10px
+		padding: 28px 10px
+		width: 200px
+		h6, h5, h4, h3, h2
+			display: block
+			font-size: 17px
+			font-weight: 400
+			letter-spacing: 1px
+			line-height: 1em
+			margin-bottom: 15px
+		.value
+			font-size: 23px
+			font-weight: 700
+			line-height: 1em
+			margin-top: 15px
+
+.invite-friends-section
+	text-align: center
+	background-color: #fafafa
+	padding-top: 65px
+	h2, h3, h4
+		font-size: 23px
+		font-weight: 500
+		line-height: 1.3em
+		color: grey
+		letter-spacing: 2px
+		strong
+			font-size: inherit
+			font-weight: inherit
+			line-height: inherit
+			letter-spacing: inherit
+			color: $main-color
+	.socials-sharing-holder
+		margin-top: 3px
+		& > *
+			display: inline-block
+			vertical-align: top
+			color: white
+			font-size: 17px
+			font-weight: 400
+			line-height: 1em
+			position: relative
+			margin: 20px 10px
+
+			text-align: center
+			width: 130px
+			height: 64px
+			// border-radius: 10px
+		%pseudo-icon
+			display: inline-block
+			vertical-align: middle
+			font: normal normal normal 25px/1em FontAwesome
+			color: white
+			margin-right: 20px
+		.label
+			white-space: nowrap
+			pointer-events: none
+			position: absolute
+			left: 0
+			top: 0
+			text-align: center
+			line-height: 64px
+			width: 100%
+			z-index: 1
+		.stButton
+			position: relative
+			position: absolute
+			width: 130px
+			height: 64px
+			border-radius: 10px
+			left: 0
+			top: 0
+			z-index: 0
+			.stLarge
+				background: none !important
+				position: absolute
+				left: 0
+				right: 0
+				top: 0
+				bottom: 0
+		.st_facebook_large
+			.label
+				&:before
+					@extend %pseudo-icon
+					content: '\f230'
+			.stButton
+				background-color: #5058c3
+		.st_twitter_large
+			.label
+				&:before
+					@extend %pseudo-icon
+					content: '\f099'
+			.stButton
+				background-color: #35aaff
+		.st_email_large
+			.label
+				&:before
+					@extend %pseudo-icon
+					content: '\f0e0'
+			.stButton
+				background-color: #f09059

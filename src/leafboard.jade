@@ -1,0 +1,140 @@
+doctype html
+html(lang='en')
+	head
+		title getleaf
+
+		include ./partials/head.jade
+
+	body
+
+		//- include ./partials/navigation.jade
+
+		section.leaderboard-header
+			.logotype-holder
+				a(href="#main-presentation").main-logo
+					span leaf
+			h1 The Leaderboard
+
+		section.leaderboard-table
+			.content-holder
+				table
+					thead
+						tr
+							td
+								span Rank
+							td
+								span Who
+							td
+								span Score
+					tbody
+						tr
+							td
+								span.leaderboard-table-counter
+							td
+								span Scott Tailor
+							td
+								span 419
+						tr
+							td
+								span.leaderboard-table-counter
+							td
+								span Michail Superovskiy
+							td
+								span 390
+						tr
+							td
+								span.leaderboard-table-counter
+							td
+								span Vladimirov Kukuzarovskiy
+							td
+								span 375
+						tr.active
+							td
+								span.leaderboard-table-counter
+							td
+								span Victorianic Paputchihikovskuy
+							td
+								span 210
+						tr
+							td
+								span.leaderboard-table-counter
+							td
+								span Scott Tailor
+							td
+								span 190
+						tr
+							td
+								span.leaderboard-table-counter
+							td
+								span Scott Tailor
+							td
+								span 160
+						tr
+							td
+								span.leaderboard-table-counter
+							td
+								span Scott Tailor
+							td
+								span 190
+						tr
+							td
+								span.leaderboard-table-counter
+							td
+								span Scott Tailor
+							td
+								span 180
+
+		section.leaderboard-status
+			.content-holder
+
+				mixin status-item (name, value)
+					li.status
+						h4= name
+						.value= value
+
+				ul.status-items
+					+status-item(
+						'Your Rank',
+						'4'
+					)
+					+status-item(
+						'Points Earned',
+						'210'
+					)
+					+status-item(
+						'Friends Referred',
+						'10'
+					)
+					+status-item(
+						'Contest Entries',
+						'1910'
+					)
+					//- +status-item(
+					//- 	'sds Your Rank',
+					//- 	'210'
+					//- )
+
+		section.invite-friends-section
+			.content-holder
+				h3 Want more <strong>points</strong>? Invite more <strong>friends!</strong>
+
+			.socials-sharing-holder
+				span.st_facebook_large(displayText='Facebook')
+					span.label Share
+				span.st_twitter_large(displayText='Tweet')
+					span.label Tweet
+				//- span.st__large(displayText='')
+				span.st_email_large(displayText='Email')
+					span.label Send
+			.separator-sharing-holder
+				span or
+			.link-sharing-holder
+				.input-group.subscribe-input-field
+					input#share-link(type="text" value="http://example.com?kid=123")
+				.input-group.subscribe-button-field
+					button(type="submit" data-copy="#share-link") Copy link
+
+		include ./partials/footer.jade
+		include ./partials/modals.jade
+
+	include ./partials/scripts.jade
