@@ -2,10 +2,20 @@
 
 .subscribe-holder
 	text-align: center
+	@media (max-width: $tablet)
+		display: block
+		margin-left: auto
+		margin-right: auto
+		width: calc(100% - 40px)
 	.input-group
 		display: inline-block
 		vertical-align: middle
+		@media (max-width: $tablet)
+			margin-bottom: 7px	
 		&.subscribe-input-field
+			@media (max-width: $tablet)
+				display: block
+				width: 100%
 			i
 				position: absolute
 				z-index: 1
@@ -24,7 +34,14 @@
 				padding-left: 58px
 				background-color: white
 				transition: opacity .3s
+				@media (max-width: $tablet)
+					width: 100%
 				&:focus
 					opacity: 1
 		&.subscribe-button-field
 			margin-left: 16px
+			@media (max-width: $tablet)
+				margin: 0
+				width: 100%
+				button, .btn, input[type="button"]
+					width: 100%

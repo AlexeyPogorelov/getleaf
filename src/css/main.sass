@@ -103,6 +103,8 @@ body::-webkit-scrollbar
 section.main-presentation
 	position: relative
 	height: 680px
+	@media (max-width: $tablet)
+		height: 578px
 	.main-background-image
 		height: 100%
 		width: 100%
@@ -131,6 +133,8 @@ section.main-presentation
 		z-index: 1
 		.content-holder
 			margin-top: 163px
+			@media (max-width: $tablet)
+				margin-top: 107px
 			text-align: center
 			h1, h2, h3
 				color: white
@@ -139,6 +143,10 @@ section.main-presentation
 				line-height: 1em
 				font-weight: 500
 				margin: 0 0 16px
+				@media (max-width: $tablet)
+					font-size: 30px
+					letter-spacing: 1px
+					margin: 0 0 10px
 				b
 					font-weight: 900
 			h4, h5, h6
@@ -147,9 +155,16 @@ section.main-presentation
 				font-weight: 600
 				line-height: 1em
 				margin: 16px 0 0
+				@media (max-width: $tablet)
+					font-size: 17px
+					line-height: 23px
+					margin: 10px 0 0
+					letter-spacing: 0px
 	.play-button-holder
 		display: inline-block
 		margin-top: 48px
+		@media (max-width: $tablet)
+			margin-top: 36px
 	.subscribe-holder
 		background-color: rgba(255, 255, 255, 0.8)
 		position: absolute
@@ -159,6 +174,9 @@ section.main-presentation
 		// height: 124px
 		padding: 30px 0
 		z-index: 1
+		@media (max-width: $tablet)
+			background: none
+			padding: 0 0 57px
 		button, .btn, input[type="button"]
 			font-size: 17px
 			letter-spacing: 1px
@@ -169,6 +187,8 @@ section.main-presentation
 			line-height: 1
 			letter-spacing: 1px
 			margin-bottom: 20px
+			@media (max-width: $tablet)
+				display: none
 
 section.main-gallery
 	margin: 25px 0 40px
@@ -180,6 +200,10 @@ section.main-gallery
 		line-height: 1em
 		text-align: center
 		margin: 91px 0 59px
+		@media (max-width: $tablet)
+			margin: 84px 0 21px
+			font-size: 30px
+			letter-spacing: 0
 		b
 			color: $main-color
 			font-weight: 700
@@ -205,6 +229,13 @@ section.main-gallery
 
 			width: 270px
 			height: 270px
+			@media (max-width: 620px)
+				width: 260px
+				height: 260px
+				height: calc(100vw - 60px)
+				width: calc(100vw - 60px)
+				iframe, video
+					width: 100%
 			.video-holder
 				border-radius: 20px
 				// opacity: 0.6
@@ -246,6 +277,8 @@ section.more-about
 	overflow: hidden
 	text-align: center
 	$more-about-mobile-media: 890px
+	@media (max-width: $tablet)
+		padding-bottom: 0
 	h2
 		line-height: 1em
 		color: #d7d7d7
@@ -254,13 +287,21 @@ section.more-about
 
 		font-size: 55px
 		letter-spacing: 3px
+		@media (max-width: $tablet)
+			font-size: 30px
+			letter-spacing: 1px
+			margin-bottom: 17px
 		b
 			color: $main-color
 			font-weight: 700
 			letter-spacing: 3px
+			@media (max-width: $tablet)
+				letter-spacing: 1px
 	.tabs-holder
 		margin-top: 26px
 		text-align: center
+		@media (max-width: $tablet)
+			margin-top: 17px
 		.tab
 			display: inline-block
 			vertical-align: middle
@@ -273,11 +314,16 @@ section.more-about
 			margin: 0 16px
 			position: relative
 			transition: color .1s
+			@media (max-width: $tablet)
+				font-size: 15px
+				letter-spacing: 1px
+				margin: 0 11px
 			&:hover
 				color: $main-color
 			&:after
 				content: ''
 				position: absolute
+				pointer-events: none
 				bottom: -7px
 				left: 0
 				right: 0
@@ -285,6 +331,8 @@ section.more-about
 				background-image: #999
 				background-image: repeating-linear-gradient(90deg, #999 0, #999 10px, transparent 10px, transparent 20px)
 				transition: background .1s
+				@media (max-width: $tablet)
+					bottom: -9px
 			&:hover:after
 				background-image: repeating-linear-gradient(90deg, $main-color 0, $main-color 10px, transparent 10px, transparent 20px)
 			&.active
@@ -299,14 +347,17 @@ section.more-about
 		white-space: nowrap
 	.interactive, .mobileapp
 		display: inline-block
+		margin: 82px auto 54px
+		position: relative
 		transition: transform .6s, opacity .6s
 		white-space: normal
 		width: 100%
-	.interactive
-		margin: 82px auto 54px
-		position: relative
 		height: 644px
 		height: 44vw
+		@media (max-width: $tablet)
+			margin: 35px auto 10px
+			height: 100vw
+	.interactive
 		// TODO remove margin left
 		// margin-left: 13px
 		%trigger
@@ -449,7 +500,9 @@ section.more-about
 			@extend %trigger
 			transform: translateX(-100%)
 			left: 27%
+			left: 23.6%
 			top: 19.4%
+			top: 18.4%
 			span
 				padding-left: 0
 				padding-right: 14px
@@ -602,10 +655,6 @@ section.more-about
 				& ~ .interactive-layer-9
 					opacity: 1
 	.mobileapp
-		margin: 82px auto 54px
-		position: relative
-		height: 644px
-		height: 44vw
 		%trigger
 			position: absolute
 			cursor: pointer
@@ -696,7 +745,7 @@ section.more-about
 			position: absolute
 			text-align: left
 			left: 65%
-			width: 230px
+			width: 220px
 
 			color: black
 			font-size: 17px
@@ -797,6 +846,9 @@ section.benefits
 	margin: 69px 0 144px
 	padding: 118px 0 72px
 	text-align: center
+	@media (max-width: $tablet)
+		margin: 69px 0 36px
+		padding: 73px 0 24px
 	h2
 		color: $main-color
 		font-size: 55px
@@ -804,45 +856,89 @@ section.benefits
 		letter-spacing: 3px
 		line-height: 1em
 		margin-bottom: 40px
-	.benefits-holder
-		.benefit
-			display: inline-block
-			vertical-align: top
-			text-align: center
-			margin: 45px 83px
-			width: 240px
-			.image
-				img
-			.description
-				h1, h2, h3, h4, h5, h6
-					margin-top: 25px
-					margin-bottom: 13px
+		@media (max-width: $tablet)
+			font-size: 30px
+			letter-spacing: 1px
+			margin-bottom: 39px
+	// .benefits-holder
+	.benefit
+		display: inline-block
+		vertical-align: top
+		text-align: center
+		margin: 45px 83px
+		margin: 45px calc(16% - 140px)
+		width: 240px
+		@media (max-width: $tablet)
+			margin: 0 0 72px
+			letter-spacing: 0
+			font-size: 0
+			white-space: nowrap
+			width: 100%
+		.image, .description
+			@media (max-width: $tablet)
+				display: inline-block
+				vertical-align: middle
+		.image
+			@media (max-width: $tablet)
+				text-align: left
+				padding-left: 20px
+				width: 34%
+			img
+				height: 71px
+				@media (max-width: $tablet)
+					height: auto
+					width: 75%
+		.description
+			@media (max-width: $tablet)
+				padding-right: 20px
+				text-align: left
+				white-space: normal
+				width: 66%
+			h1, h2, h3, h4, h5, h6
+				margin-top: 25px
+				margin-bottom: 13px
 
-					color: grey
-					font-size: 17px
-					font-weight: 500
-					line-height: 1.3em
-					letter-spacing: 1px
-				p
-					color: #9f9f9f
-					font-size: 13px
-					font-weight: 400
-					line-height: 1.3em
+				color: grey
+				font-size: 17px
+				font-weight: 500
+				line-height: 1.3em
+				letter-spacing: 1px
+				@media (max-width: $tablet)
+					font-size: 15px
+					line-height: 20px
+			p
+				color: #9f9f9f
+				font-size: 13px
+				font-weight: 400
+				line-height: 1.3em
 
 section.faq
 	margin-top: 147px
+	@media (max-width: $tablet)
+		margin-top: 52px
 	.section-header
 		text-align: center
 		margin-bottom: 45px
+		@media (max-width: $tablet)
+			margin-bottom: 32px
 		h2
 			color: $main-color
 			font-size: 35px
 			font-weight: 700
 			letter-spacing: 2px
 			line-height: 1em
+			@media (max-width: $tablet)
+				padding: 0 20px
+				font-size: 30px
+				line-height: 1.3em
+				letter-spacing: 1px
 	.accordion
 		margin: 0 auto 141px
 		width: 800px
+		@media (max-width: $tablet)
+			margin: 0 auto 40px
+			width: 100%
+			width: calc(100% - 40px)
 		.panel
 			background-color: #f6f6f6
 			border: 1px solid #e5e5e5
@@ -850,15 +946,20 @@ section.faq
 			padding: 0 29px 28px
 			margin-bottom: 20px
 			transition: border .3s, background .3s, padding .3s
-			// &:hover
-			// 	background-color: #d4faee
-			// 	border-color: #c9f0e4
+			@media (max-width: $tablet)
+				padding: 0 16px 28px
 			.panel-heading
 				position: relative
 				padding: 28px 0 23px
 				cursor: pointer
 				transition: margin .3s, padding .3s
+				pointer-events: none
+				@media (max-width: $tablet)
+					padding: 13px 0 22px
 				.panel-title
+					pointer-events: all
+					@media (max-width: $tablet)
+						padding-right: 28px
 					&, a
 						color: black
 						font-size: 17px
@@ -866,6 +967,9 @@ section.faq
 						letter-spacing: 0.74px
 						line-height: 1.2em
 						transition: color .3s
+						@media (max-width: $tablet)
+							font-size: 15px
+							line-height: 1.3em
 				&:after
 					content: ""
 					color: grey
@@ -878,6 +982,9 @@ section.faq
 					top: 21px
 					transform: rotateZ(-180deg) translateZ(0)
 					transition: transform .3s, top .3s, color .3s
+					@media (max-width: $tablet)
+						font-size: 21px
+						top: 12px
 				&:hover
 					&:after
 						color: $main-color
@@ -892,12 +999,17 @@ section.faq
 
 				overflow: hidden
 				transition: height .3s
+				@media (max-width: $tablet)
+					line-height: 1.4em
 			&.collapsed
 				background-color: #fcfcfc
 				border: 1px solid #f5f5f5
 				padding-bottom: 0
 				.panel-heading
+					pointer-events: all
 					padding: 28px 0
+					@media (max-width: $tablet)
+						padding: 16px 0 23px
 					&:after
 						transform: rotateZ(0) translateZ(0)
 						&:hover
@@ -918,20 +1030,30 @@ section.as-seen-on
 	text-align: center
 	background-color: #fafafa
 	padding: 50px 0 62px
+	@media (max-width: $tablet)
+		padding: 16px 0 62px
 	h2
 		color: $main-color
 		font-size: 55px
 		font-weight: 700
 		line-height: 2.563em
 		letter-spacing: 3px
+		@media (max-width: $tablet)
+			font-size: 30px
+			letter-spacing: 1px
 	.logos-holder
 		max-width: 1280px
 		margin: 19px auto 0
+		@media (max-width: $tablet)
+			padding: 0 20px
 		.logo
 			display: inline-block
 			margin: 36px 63px
 			vertical-align: middle
-			// img
+			@media (max-width: $tablet)
+				margin: 16px 0
+			img
+				max-width: 100%
 
 section.subscribe-section
 	background: url('http://pogorelov.cc.ua/getleaf/img/content/leaf_pics/foot.jpg') 50% 50% no-repeat
@@ -1038,61 +1160,42 @@ section.subscribe-section
 					color: $main-color-hover
 
 .main-navigation
-	@media screen and (max-width: $tablet)
+	@media (max-width: $tablet)
+		display: none
+.mobile-navigation
+	display: block
+	padding: 35px 16px
+	.logotype-holder
+		padding-left: 0
+	.main-logo
+		font-size: 30px
+		letter-spacing: 3.75px
+	@media (min-width: $tablet + 1px)
 		display: none
 
 // --------------------------------------------------
 // MOBILE-NAVIGATION
 // --------------------------------------------------
+.gamburger
+	padding: 10px
+	display: inline-block
+	cursor: pointer
+	span
+		display: block
+		background: #fff
+		height: 4px
+		margin-bottom: 5px
+		width: 32px
+		border-radius: 2px
+		// &:first-child
+		&:last-child
+			margin-bottom: 0
+	// &:hover
+	// 	span
+	// 		background: $main-color
 
 .mobile-navigation
-	display: none
-	height: 54px
-	padding: 0 20px
-	@media screen and (max-width: $tablet)
-		display: block
-	.block-holder
-		.gamburger
-			margin-top: 14px
-		.logotype-holder
-			left: 0
-			position: absolute
-			text-align: center
-			top: 18px
-			width: 48px
-			@media screen and (max-width: $tablet)
-				top: 22px
-			a
-				display: block
-				width: 100%
-				margin: 0
-				img
-					width: 100%
-			.cities-list-holder
-				left: 38px
-				top: 16px
-				font-size: 12px
-				line-height: 1em
-				@media screen and (max-width: $tablet)
-					left: 32px
-					top: 16px
-					font-size: 11px
-				li
-					line-height: 1em
-				.label
-					.icon
-						background-size: contain
-						top: 2px
-						height: 7px
-						right: -13px
-						width: 11px
-	.controls-holder
-		top: 17px
-		& > a, .control
-			margin-left: 19px
-			margin-right: 0
-		.profile-button
-			//.badge
+	padding: 20px
 
 .cross-top-fixed.cross-navigation
 	margin-top: 20px
