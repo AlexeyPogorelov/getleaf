@@ -584,6 +584,21 @@ $(document).on('ready', function () {
 
 		})();
 
+		// show more
+		(function () {
+
+			var $show = $('[data-show]');
+			$show.on('click', function (e) {
+				e.preventDefault();
+				var $target,
+					selector;
+				selector = $(this).attr('data-show');
+				$target = $( selector );
+				$target.toggleClass('opened');
+			});
+
+		})();
+
 		// resize
 		var iframes = getleaf.iframesResize = (function () {
 			var $iframes = $('iframe');

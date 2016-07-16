@@ -280,6 +280,39 @@ section.main-gallery
 						opacity: 0
 				.description
 					opacity: 0
+			&:nth-child(1n+4)
+				@media (max-width: 620px)
+					display: none
+	&.opened
+		.gallery
+			&:nth-child(1n+4)
+				display: inline-block
+		.show-more-holder
+			display: none
+
+.show-more-holder
+	text-align: center
+	width: 100%
+	.show-more
+		cursor: pointer
+		display: inline-block
+		color: #999
+		font-size: 15px
+		font-weight: 500
+		line-height: 1.25em
+		position: relative
+		padding: 7px
+		&:after
+			content: ''
+			position: absolute
+			pointer-events: none
+			bottom: 0
+			left: 9px
+			right: 8px
+			height: 2px
+			background-image: #999
+			background-image: repeating-linear-gradient(90deg, #999 0, #999 8px, transparent 8px, transparent 16px)
+			transition: background .1s
 
 section.more-about
 	margin: 132px 0 0
