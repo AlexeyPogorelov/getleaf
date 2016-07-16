@@ -1,4 +1,5 @@
 @import _mixins
+$table-leaderboard-mobile-width: 680px
 
 .leaderboard-header
 	background: url('../img/content/leaderboard-background.jpg') 50% 50% no-repeat
@@ -7,30 +8,57 @@
 	position: relative
 	padding: 112px 40px 68px
 	margin-bottom: 50px
+	@media (max-width: $table-leaderboard-mobile-width)
+		padding: 68px 40px 49px
+		margin-bottom: 40px
 	.logotype-holder
 		position: absolute
 		left: 47px
 		top: 36px
-		a
-			span
-	h1
+		@media (max-width: $table-leaderboard-mobile-width)
+			display: none
+	.close-leaderboard-holder
+		display: none
+		position: absolute
+		font-size: 25px
+		right: 20px
+		top: 13px
+		color: #fff
+		@media (max-width: $table-leaderboard-mobile-width)
+			display: block
+	h1, h2, h3
 		color: white
 		font-size: 60px
 		font-weight: 700
 		letter-spacing: 4px
 		line-height: 1em
 		margin: 0
+		@media (max-width: $table-leaderboard-mobile-width)
+			font-size: 30px
+			letter-spacing: 2px
+			line-height: 1.4em
 
 .leaderboard-table
 	margin-top: 70px
 	margin-bottom: 50px
 	counter-reset: leaderboard-table-counter
+	@media (max-width: $tablet)
+		margin-bottom: 20px
+	@media (max-width: $table-leaderboard-mobile-width)
+		margin-top: 44px
+	.table-holder
+		overflow: visible
+		@media (max-width: $table-leaderboard-mobile-width)
+			overflow: auto
+			padding: 0 8px
 	.content-holder
 		margin: auto
 		max-width: 618px
 	.leaderboard-table-counter
 		font-size: 23px
 		font-weight: 700
+		@media (max-width: $table-leaderboard-mobile-width)
+			font-size: 15px
 		&:after
 			counter-increment: leaderboard-table-counter
 			content: counter(leaderboard-table-counter)
@@ -38,19 +66,35 @@
 		color: grey
 		margin-left: -12px
 		width: 100%
+		@media (max-width: $table-leaderboard-mobile-width)
+			margin-left: 0
 	thead
 		font-size: 23px
 		font-weight: 700
 		letter-spacing: 2px
+		@media (max-width: $table-leaderboard-mobile-width)
+			font-size: 13px
+			letter-spacing: 0
 		td
 			padding: 0 0 23px
+			@media (max-width: $table-leaderboard-mobile-width)
+				padding: 0 0 24px
 			&:first-child
 				span
 					margin-left: -4px
+					@media (max-width: $table-leaderboard-mobile-width)
+						margin-left: 0
+						padding-left: 0
+			&:nth-child(2)
+				@media (max-width: $table-leaderboard-mobile-width)
+					text-align: center
 	tbody
 		font-size: 17px
 		font-weight: 400
 		letter-spacing: 1px
+		@media (max-width: $table-leaderboard-mobile-width)
+			font-size: 13px
+			letter-spacing: 0
 	tr
 		&.active
 			td
@@ -84,24 +128,43 @@
 		&:first-child
 			text-align: center
 			width: 1px
+			@media (max-width: $table-leaderboard-mobile-width)
+				text-align: left
+				padding-left: 11px
 		&:nth-child(2)
 			padding-left: 89px
 			padding-right: 89px
-		&:nth-child(3)
+			@media (max-width: $table-leaderboard-mobile-width)
+				padding-left: 3px
+				padding-right: 3px
+		&:last-child
 			width: 1px
 			padding-right: 4px
+			@media (max-width: $table-leaderboard-mobile-width)
+				text-align: right
+				padding-right: 11px
 			span
 				position: relative
 				left: 29px
+				@media (max-width: $table-leaderboard-mobile-width)
+					// left: -4px
+					position: static
 
 .leaderboard-status
 	margin-top: 55px
 	margin-bottom: 71px
+	@media (max-width: $tablet)
+		margin-bottom: 20px
 	.status-items
 		letter-spacing: 0
 		font-size: 0
 		margin: auto
 		max-width: 880px
+		text-align: center
+		@media (max-width: $tablet)
+			max-width: 560px
+		@media (max-width: $mobile-large)
+			display: none
 	.status
 		color: grey
 		display: inline-block
@@ -129,12 +192,20 @@
 	text-align: center
 	background-color: #fafafa
 	padding-top: 65px
+	@media (max-width: $table-leaderboard-mobile-width)
+		padding-top: 45px
 	h2, h3, h4
 		font-size: 23px
 		font-weight: 500
 		line-height: 1.3em
 		color: grey
 		letter-spacing: 2px
+		@media (max-width: $table-leaderboard-mobile-width)
+			font-size: 18px
+			font-weight: 500
+			line-height: 1.5em
+			letter-spacing: 1px
+			padding: 0 20px
 		strong
 			font-size: inherit
 			font-weight: inherit
@@ -157,12 +228,22 @@
 			width: 130px
 			height: 64px
 			// border-radius: 10px
+			@media (max-width: $table-leaderboard-mobile-width)
+				margin: 20px 5px
+				font-size: 15px
+				height: 50px
+				width: 87px
+				width: calc(33vw - 16px)
 		%pseudo-icon
 			display: inline-block
 			vertical-align: middle
 			font: normal normal normal 25px/1em FontAwesome
 			color: white
 			margin-right: 20px
+			@media (max-width: $table-leaderboard-mobile-width)
+				margin-left: 2px
+				margin-right: 8px
+				font-size: 18px
 		.label
 			white-space: nowrap
 			pointer-events: none
@@ -173,6 +254,8 @@
 			line-height: 64px
 			width: 100%
 			z-index: 1
+			@media (max-width: $table-leaderboard-mobile-width)
+				line-height: 50px
 		.stButton
 			position: relative
 			position: absolute
@@ -182,6 +265,10 @@
 			left: 0
 			top: 0
 			z-index: 0
+			@media (max-width: $table-leaderboard-mobile-width)
+				height: 50px
+				width: 87px
+				width: calc(33vw - 16px)
 			.stLarge
 				background: none !important
 				position: absolute
@@ -194,8 +281,11 @@
 				&:before
 					@extend %pseudo-icon
 					content: '\f230'
+					margin-top: -2px
 			.stButton
 				background-color: #5058c3
+				&:hover
+					background-color: #5058c3 + #222222
 		.st_twitter_large
 			.label
 				&:before
@@ -203,10 +293,61 @@
 					content: '\f099'
 			.stButton
 				background-color: #35aaff
+				&:hover
+					background-color: #35aaff + #222222
 		.st_email_large
 			.label
 				&:before
 					@extend %pseudo-icon
 					content: '\f0e0'
+					margin-top: -2px
 			.stButton
 				background-color: #f09059
+				&:hover
+					background-color: #f09059 + #222222
+
+	.separator-sharing-holder
+		margin-top: 10px
+		margin-bottom: 32px
+		text-align: center
+		color: grey
+		font-size: 23px
+		font-weight: 700
+		line-height: 1.313em
+		letter-spacing: 2px
+		@media (max-width: $table-leaderboard-mobile-width)
+			font-size: 30px
+			letter-spacing: 1px
+			line-height: 1em
+			margin-top: 0
+			margin-bottom: 0
+
+	.link-sharing-holder
+		margin-top: 30px
+		padding-bottom: 55px
+		@media (max-width: $tablet)
+			margin-top: 24px
+			padding-left: 20px
+			padding-right: 20px
+			padding-bottom: 29px
+		.subscribe-input-field, .subscribe-button-field
+			display: inline-block
+			vertical-align: middle
+			@media (max-width: $tablet)
+				display: block
+				margin-bottom: 20px
+				width: 100%
+			input, button
+				margin: 0
+				@media (max-width: $tablet)
+					width: 100%
+		.subscribe-input-field
+			input
+				width: 383px
+				@media (max-width: $tablet)
+					width: 100%
+		.subscribe-button-field
+			button
+				margin-left: 18px
+				@media (max-width: $tablet)
+					margin-left: 0

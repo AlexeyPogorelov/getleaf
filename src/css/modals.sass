@@ -30,6 +30,7 @@
 	background: #fff
 	opacity: 0
 	position: fixed
+	pointer-events: none
 	top: 0
 	left: 0
 	right: 0
@@ -47,6 +48,7 @@
 		transform: translateY(40px) translateZ(0)
 		transition: opacity .3s ease-out, transform .5s, visibility .4s, outline .4s
 	&.opened
+		pointer-events: all
 		opacity: 1
 		visibility: visible
 		-webkit-overflow-scrolling: touch

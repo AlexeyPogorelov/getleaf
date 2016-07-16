@@ -4,6 +4,9 @@ html(lang='en')
 		title getleaf
 
 		include ./partials/head.jade
+		include ./partials/opengraph.jade
+		meta(name="twitter:url" content="http://pogorelov.cc.ua/getleaf/leafboard.html")
+		meta(property="og:url" content="http://pogorelov.cc.ua/getleaf/leafboard.html")
 
 	body
 
@@ -11,78 +14,81 @@ html(lang='en')
 
 		section.leaderboard-header
 			.logotype-holder
-				a(href="#main-presentation").main-logo
+				a(href="/").main-logo
 					span leaf
+			a(href="/").close-leaderboard-holder
+				i.fa.fa-times(aria-hidden="true")
 			h1 The Leaderboard
 
 		section.leaderboard-table
 			.content-holder
-				table
-					thead
-						tr
-							td
-								span Rank
-							td
-								span Who
-							td
-								span Score
-					tbody
-						tr
-							td
-								span.leaderboard-table-counter
-							td
-								span Scott Tailor
-							td
-								span 419
-						tr
-							td
-								span.leaderboard-table-counter
-							td
-								span Michail Superovskiy
-							td
-								span 390
-						tr
-							td
-								span.leaderboard-table-counter
-							td
-								span Vladimirov Kukuzarovskiy
-							td
-								span 375
-						tr.active
-							td
-								span.leaderboard-table-counter
-							td
-								span Victorianic Paputchihikovskuy
-							td
-								span 210
-						tr
-							td
-								span.leaderboard-table-counter
-							td
-								span Scott Tailor
-							td
-								span 190
-						tr
-							td
-								span.leaderboard-table-counter
-							td
-								span Scott Tailor
-							td
-								span 160
-						tr
-							td
-								span.leaderboard-table-counter
-							td
-								span Scott Tailor
-							td
-								span 190
-						tr
-							td
-								span.leaderboard-table-counter
-							td
-								span Scott Tailor
-							td
-								span 180
+				.table-holder
+					table
+						thead
+							tr
+								td
+									span Rank
+								td
+									span Who
+								td
+									span Score
+						tbody
+							tr
+								td
+									span.leaderboard-table-counter
+								td
+									span Scott Tailor
+								td
+									span 419
+							tr
+								td
+									span.leaderboard-table-counter
+								td
+									span Michail Superovskiy
+								td
+									span 390
+							tr
+								td
+									span.leaderboard-table-counter
+								td
+									span Vladimirov Kukuzarovskiy
+								td
+									span 375
+							tr.active
+								td
+									span.leaderboard-table-counter
+								td
+									span Victorianic Paputchihikovskuy
+								td
+									span 210
+							tr
+								td
+									span.leaderboard-table-counter
+								td
+									span Scott Tailor
+								td
+									span 190
+							tr
+								td
+									span.leaderboard-table-counter
+								td
+									span Scott Tailor
+								td
+									span 160
+							tr
+								td
+									span.leaderboard-table-counter
+								td
+									span Scott Tailor
+								td
+									span 190
+							tr
+								td
+									span.leaderboard-table-counter
+								td
+									span Scott Tailor
+								td
+									span 180
 
 		section.leaderboard-status
 			.content-holder
@@ -130,7 +136,7 @@ html(lang='en')
 				span or
 			.link-sharing-holder
 				.input-group.subscribe-input-field
-					input#share-link(type="text" value="http://example.com?kid=123")
+					input#share-link(type="text" value="http://example.com?kid=123" disabled)
 				.input-group.subscribe-button-field
 					button(type="submit" data-copy="#share-link") Copy link
 
@@ -138,3 +144,7 @@ html(lang='en')
 		include ./partials/modals.jade
 
 	include ./partials/scripts.jade
+
+script(type="text/javascript") var switchTo5x=true;
+script(type="text/javascript" src="http://w.sharethis.com/button/buttons.js")
+script(type="text/javascript") stLight.options({publisher: "21ccc86e-da44-46f0-9d64-af36b19cb4c0", doNotHash: false, doNotCopy: false, hashAddressBar: false, onhover: false});

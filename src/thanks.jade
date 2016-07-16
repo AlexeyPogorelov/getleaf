@@ -1,0 +1,83 @@
+doctype html
+html(lang='en')
+	head
+		title getleaf
+
+		include ./partials/head.jade
+		include ./partials/opengraph.jade
+		meta(name="twitter:url" content="http://pogorelov.cc.ua/getleaf/leafboard.html")
+		meta(property="og:url" content="http://pogorelov.cc.ua/getleaf/leafboard.html")
+
+	body
+
+		//- include ./partials/navigation.jade
+
+		section.thanks-header
+			a(href="/").close-thanks-holder
+				i.fa.fa-times(aria-hidden="true")
+			h1 We’ll let you know when your LEAF is available at discount pricing
+
+		section.invite-friends-section
+			.content-holder
+				h3 <strong>Share </strong> this special price and get another <strong> $100 off</strong>
+
+			.socials-sharing-holder
+				span.st_facebook_large(displayText='Facebook')
+					span.label Share
+				span.st_twitter_large(displayText='Tweet')
+					span.label Tweet
+				//- span.st__large(displayText='')
+				span.st_email_large(displayText='Email')
+					span.label Send
+			.separator-sharing-holder
+				span or
+			.link-sharing-holder
+				.input-group.subscribe-input-field
+					input#share-link(type="text" value="http://example.com?kid=123" disabled)
+				.input-group.subscribe-button-field
+					button(type="submit" data-copy="#share-link") Copy link
+
+		section.discount-status
+			.content-holder
+				h3 Rather than spent money on advetiging we decided ro <strong> reward you!</strong> When even one friend signs up (for free) we’ll thank you with <strong> $100</strong>
+				.discount-status-holder
+					mixin discount-status-point (number, description, active)
+						.discount-status-point(class= active ? 'active' : '')
+							.icon-holder
+								.number= number
+								.label friends
+							.description-holder
+								span!= description
+
+					.discount-status-line
+						.discount-status-state(style="width:44%;height:44%")
+
+					.discount-status-points
+						+discount-status-point (
+							'1',
+							'$100 off',
+							true
+						)
+						+discount-status-point (
+							'5',
+							'$150 off',
+							true
+						)
+						+discount-status-point (
+							'10',
+							'$200 off'
+						)
+						+discount-status-point (
+							'25',
+							'$250 off <b>+ special bonus</b>'
+						)
+
+
+		include ./partials/footer.jade
+		include ./partials/modals.jade
+
+	include ./partials/scripts.jade
+
+script(type="text/javascript") var switchTo5x=true;
+script(type="text/javascript" src="http://w.sharethis.com/button/buttons.js")
+script(type="text/javascript") stLight.options({publisher: "21ccc86e-da44-46f0-9d64-af36b19cb4c0", doNotHash: false, doNotCopy: false, hashAddressBar: false, onhover: false});

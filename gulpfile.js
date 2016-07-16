@@ -15,7 +15,7 @@ var path = {
 		fonts: 'dist/fonts/'
 	},
 	src: {
-		html: 'src/*.jade',
+		html: ['src/**/*.jade'],
 		js: 'src/js/*.js',
 		style: 'src/css/*.*',
 		img: 'src/img/**/*.*',

@@ -33,6 +33,8 @@ var loading = {
 
 		if (loading.finished) return;
 
+		getleaf.iframesResize();
+
 		// TODO temp for developing
 		// $('section.articles-gallery-1 > article, .article-content, .article-name, .article-date, .video, .article-page, #about-modal .content-holder').find('p, h1, h2, h3, h4, h5, h6, blockquote, span').attr('contenteditable', true).on('click', function (e) {
 		// 	e.preventDefault();
@@ -583,6 +585,31 @@ $(document).on('ready', function () {
 		})();
 
 		// resize
+		var iframes = getleaf.iframesResize = (function () {
+			var $iframes = $('iframe');
+			var plg = {
+				resize: function () {
+					var iframeWin = this.contentWindow || this.contentDocument.parentWindow;
+					if (iframeWin.document.body) {
+						this.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+					}
+				},
+				resizeIframes: function () {
+					$iframes.each(plg.resize);
+				}
+			};
+
+			$iframes.on('load', plg.resize);
+			$window.on('resize', plg.resizeIframes);
+
+			return {
+				resize: plg.resize,
+				resizeIframes: plg.resizeIframes
+			};
+
+		})();
+
+		// resize
 		$window.on('resize', function () {
 
 			winWidth = $window.width();
@@ -620,14 +647,24 @@ $(document).on('ready', function () {
 	video = {'videoId': 'XdPbgNkAs5k'};
 
 	window.onYouTubePlayerAPIReady = function () {
-		youTube = new YT.Player('main-video-background', {events: {'onReady': onPlayerReady}, playerVars: playerDefaults});
+		youTube = new YT.Player('main-video-background', {events: {'onReady': onPlayerReady, 'onStateChange': onPlayerStateChange}, playerVars: playerDefaults});
 	};
 
 	window.onPlayerReady = function () {
-		youTube.loadVideoById( video );
+		// youTube.loadVideoById( video );
 		// youTube.mute();
+		// youTube.pauseVideo();
 		getleaf.video = youTube;
 	};
+	window.onPlayerStateChange = function (e) {
+		// console.log(e.data)
+		// if (e.data === 3) {
+		// 	youTube.stopVideo();
+		// }
+	};
 
+	$('[data-modal="#main-video-modal"]').one('click', function () {
+		youTube.loadVideoById( video );
+	});
 
 })();
