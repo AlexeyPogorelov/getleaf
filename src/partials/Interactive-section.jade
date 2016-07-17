@@ -108,6 +108,11 @@ section.interactive-maps-section#interactive-maps-section
 					$interactiveMapsSection = $('#interactive-maps-section'),
 					$tabs = $interactiveMapsSection.find('.tabs-holder'),
 					$interactive = $interactiveMapsSection.find('#interactive, #mobileapp');
+
+				$interactive.css({
+					'transform': 'translateX(0px) translateZ(1px)'
+				});
+
 				$tabs.find('[data-tab="interactive"]')
 					.on('click', function () {
 						$(this).addClass('active').siblings().removeClass('active');

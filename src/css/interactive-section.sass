@@ -81,6 +81,7 @@ section.interactive-maps-section
 			padding-bottom: 20px
 	.interactive, .mobileapp
 		display: inline-block
+		vertical-align: top
 		// margin: 82px auto 54px
 		margin: 82px auto 0
 		position: relative
@@ -138,13 +139,18 @@ section.interactive-maps-section
 				@media (max-width: $more-about-mobile-media)
 					font-size: 13px
 					line-height: 1.125em
-					border: 3px solid #5cffdc
-					transform: translateY(-100%) translateZ(1px) !important
-					top: 0 !important
+					border: 2px solid #5cffdc
+					padding: 12px
+					// transform: translateY(-100%) translateZ(1px) !important
 
 					width: 300px !important;
 					width: calc(100vw - 10px) !important;
 					right: auto !important;
+
+					position: fixed
+					top: -106px !important
+					left: 5px !important
+					transform: none !important
 				&, p
 					color: grey
 					font-size: 13px
@@ -191,6 +197,7 @@ section.interactive-maps-section
 					opacity: 0.3
 					background-color: #00bf82
 					border: 3px solid #56ffc9
+					transform: none !important
 			&:hover
 				&:before
 					@media (max-width: $more-about-mobile-media)
@@ -269,9 +276,10 @@ section.interactive-maps-section
 				right: -$offVw
 				@media (max-width: $more-about-mobile-media)
 					right: 0
-			.tooltip
-				@media (max-width: $more-about-mobile-media)
-					left: calc(-30vw + 5px)
+			// .tooltip
+			// 	@media (max-width: $more-about-mobile-media)
+			// 		left: calc(-30vw + 5px)
+			// 		top: 0
 			&:hover
 				& ~ .interactive-layer-1
 					opacity: 1
@@ -279,13 +287,14 @@ section.interactive-maps-section
 			@extend %trigger
 			$offPx: 178px
 			$offVw: 14vw
+			$mobileTop: 14.8%
 			transform: translateX(-100%)
 			left: 23.6%
 			top: 18.4%
 			@media (max-width: $more-about-mobile-media)
 				transform: none
 				left: 20.7%
-				top: 14.8%
+				top: $mobileTop
 			span
 				padding-left: 0
 				padding-right: 14px
@@ -298,9 +307,6 @@ section.interactive-maps-section
 				right: -$offVw
 				@media (max-width: $more-about-mobile-media)
 					right: 0
-			.tooltip
-				@media (max-width: $more-about-mobile-media)
-					left: calc(-20.7vw + 5px)
 			&:hover
 				& ~ .interactive-layer-2
 					opacity: 1
@@ -545,13 +551,18 @@ section.interactive-maps-section
 				@media (max-width: $more-about-mobile-media)
 					font-size: 13px
 					line-height: 1.125em
-					border: 3px solid #5cffdc
-					transform: translateY(-100%) translateZ(1px) !important
-					top: 0 !important
+					border: 2px solid #5cffdc
+					padding: 12px
+					// transform: translateY(-100%) translateZ(1px) !important
 
 					width: 300px !important;
 					width: calc(100vw - 10px) !important;
 					right: auto !important;
+
+					position: fixed !important
+					top: -106px !important
+					left: 5px !important
+					transform: none !important
 				&, p
 					color: grey
 					font-size: 13px
@@ -598,6 +609,7 @@ section.interactive-maps-section
 					opacity: 0.3
 					background-color: #00bf82
 					border: 3px solid #56ffc9
+					transform: none !important
 			&:hover
 				&:before
 					@media (max-width: $more-about-mobile-media)

@@ -296,9 +296,11 @@ section.main-gallery
 			&:hover
 				.video-holder
 					&:after
-						opacity: 0
+						@media (min-width: 620px + 1px)
+							opacity: 0
 				.description
-					opacity: 0
+					@media (min-width: 620px + 1px)
+						opacity: 0
 			&:nth-child(1n+4)
 				@media (max-width: 620px)
 					display: none
@@ -512,10 +514,12 @@ section.faq
 						top: 12px
 				&:hover
 					&:after
-						color: $main-color
+						@media (min-width: $tablet + 1px)
+							color: $main-color
 					.panel-title
 						&, a
-							color: $main-color
+							@media (min-width: $tablet + 1px)
+								color: $main-color
 			.panel-collapse
 				color: grey
 				font-size: 13px
@@ -527,9 +531,10 @@ section.faq
 				@media (max-width: $tablet)
 					line-height: 1.4em
 			&.collapsed
-				background-color: #fcfcfc
-				border: 1px solid #f5f5f5
 				padding-bottom: 0
+				@media (min-width: $tablet + 1px)
+					background-color: #fcfcfc
+					border: 1px solid #f5f5f5
 				.panel-heading
 					pointer-events: all
 					padding: 28px 0
@@ -538,18 +543,22 @@ section.faq
 					&:after
 						transform: rotateZ(0) translateZ(0)
 						&:hover
-							color: $main-color
+							@media (min-width: $tablet + 1px)
+								color: $main-color
 				.panel-collapse
 					height: 0
 				&:hover
-					background-color: #d4faee
-					border-color: #c9f0e4
+					@media (min-width: $tablet + 1px)
+						background-color: #d4faee
+						border-color: #c9f0e4
 					.panel-heading
 						&:after
-							color: $main-color
+							@media (min-width: $tablet + 1px)
+								color: $main-color
 					.panel-title
 						&, a
-							color: $main-color
+							@media (min-width: $tablet + 1px)
+								color: $main-color
 
 section.as-seen-on
 	text-align: center
