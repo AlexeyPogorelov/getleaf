@@ -20,7 +20,8 @@ html(lang='en')
 				p.label Our first LEAF’s will be heavily discounted. Don’t miss out
 				.input-group.subscribe-input-field
 					i.fa.fa-envelope(aria-hidden="true")
-					input(type="text" placeholder="E-mail")
+					input(type="text" placeholder="E-mail" data-validate="email")
+					.error-label The Email is not valid
 				.input-group.subscribe-button-field
 					button(type="submit") Discount, please
 
@@ -44,27 +45,27 @@ html(lang='en')
 					'Precise temperature and humidity control'
 				)
 				+gallery(
-					'http://pogorelov.cc.ua/getleaf/img/content/leaf_videos/3_color',
-					'Prices temperature and humidity control'
+					'http://pogorelov.cc.ua/getleaf/img/content/leaf_videos/2_2_color',
+					'Automatic nutrient dosing'
 				)
 				+gallery(
-					'http://pogorelov.cc.ua/getleaf/img/content/leaf_videos/4_color',
+					'http://pogorelov.cc.ua/getleaf/img/content/leaf_videos/3_color',
 					'Optional hookup for automatic water changes'
 				)
 				+gallery(
-					'http://pogorelov.cc.ua/getleaf/img/content/leaf_videos/5_color',
+					'http://pogorelov.cc.ua/getleaf/img/content/leaf_videos/4_color',
 					'Smell preventing carbon filter'
 				)
 				+gallery(
+					'http://pogorelov.cc.ua/getleaf/img/content/leaf_videos/5_color',
+					'Easy step by step video instructions'
+				)
+				+gallery(
 					'http://pogorelov.cc.ua/getleaf/img/content/leaf_videos/6_color',
-					'Easy step by step video instruction'
+					'Drying mode'
 				)
 				+gallery(
 					'http://pogorelov.cc.ua/getleaf/img/content/leaf_videos/7_color',
-					'During mode'
-				)
-				+gallery(
-					'http://pogorelov.cc.ua/getleaf/img/content/leaf_videos/8_color',
 					'Advanced BIOS LED light'
 				)
 			.show-more-holder
@@ -110,23 +111,72 @@ html(lang='en')
 					.panel-heading(role='tab')
 						h4.panel-title
 							a(aria-expanded='true', aria-controls='collapseOne')
-								| If you are looking for great ways to decorate your home or office
+								| What is LEAF?
 					.panel-collapse
-						| Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+						| LEAF is a plug-n-plant™ system that automatically grows medical plants and food and is controlled by your smartphone. Think of it as a beautiful mini fridge that stocks itself with high quality, pesticide free, natural medicine and food.
 				.panel
 					.panel-heading(role='tab')
 						h4.panel-title
 							a.collapsed(aria-expanded='false', aria-controls='collapseTwo')
-								| Collapsible Group Item #2
+								| When can I purchase LEAF?
 					.panel-collapse
-						| Businesses often become known today through effective marketing. The marketing may be in the form of a regular news item or half column society news in the Sunday newspaper. <br> <br> heart to heart talk with Mr. Brown on <br> <br> These are all advertising. Businesses cannot get away from the force of advertising. If they want to make their products known in the marketplace they have to use some form of advertisement. Advertising is being more and more known as a reasonable and desirable business force. Let’s say you own a department store. The advertising manager of the store is like the managing editor of a daily newspaper with his group of reporters regularly bringing fresh matter to his desk and the different department heads acts as the reporters.
+						| We are planning to start sales this Fall. To qualify to purchase you must register here (make link to email signup form). We will be releasing additional product info from now until our launch in the Fall.
 				.panel
 					.panel-heading(role='tab')
 						h4.panel-title
 							a.collapsed(aria-expanded='false', aria-controls='collapseThree')
-								| The Function Of The Logo
+								| How much will LEAF cost?
 					.panel-collapse
-						| Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+						| We are in the final stages of getting quotes from our manufacturer and will be releasing pricing information towards the Fall. We will require a small deposit at the time of order and the balance before shipping.
+				.panel
+					.panel-heading(role='tab')
+						h4.panel-title
+							a.collapsed(aria-expanded='false', aria-controls='collapseThree')
+								| How much medicine can I grow with LEAF?
+					.panel-collapse
+						| On average you will yield 4 ounces of high quality, pesticide free, medicine. Our beta testers have grown almost double that in certain cases!
+				.panel
+					.panel-heading(role='tab')
+						h4.panel-title
+							a.collapsed(aria-expanded='false', aria-controls='collapseThree')
+								| Do you ship internationally?
+					.panel-collapse
+						| Initially we will be shipping to the USA and Canada. We are currently working on international distribution partnerships to be able to ship worldwide. If you are interested in becoming an international distributor please fill out this form.
+				.panel
+					.panel-heading(role='tab')
+						h4.panel-title
+							a.collapsed(aria-expanded='false', aria-controls='collapseThree')
+								| What is the size of LEAF?
+					.panel-collapse
+						| LEAF’s dimensions are currently 24” x 24” x 60”. *Size is still subject to change.
+				.panel
+					.panel-heading(role='tab')
+						h4.panel-title
+							a.collapsed(aria-expanded='false', aria-controls='collapseThree')
+								| Do I need any previous growing experience to use LEAF?
+					.panel-collapse
+						| No! LEAF has been built from the ground up to provide an easy experience for everyone regardless of age or growing experience. LEAF is also great for experienced growers looking to have “remote” controlling of their crops and not need to be around them 24/7.
+				.panel
+					.panel-heading(role='tab')
+						h4.panel-title
+							a.collapsed(aria-expanded='false', aria-controls='collapseThree')
+								| How much electricity does LEAF use?
+					.panel-collapse
+						| LEAF will use about $15-$50 per month in electricity, mainly dependant on how much the air control system needs to work to heat/cool/humidify/dehumidify your grow area. In a normal use case you would spend this much or more just to heat or cool your grow room.
+				.panel
+					.panel-heading(role='tab')
+						h4.panel-title
+							a.collapsed(aria-expanded='false', aria-controls='collapseThree')
+								| Does LEAF prevent smells from coming from the grow area?
+					.panel-collapse
+						| Yes! LEAF will blow all the air from the grow area through its active carbon filter which will neutralize all smells and impurities.
+				.panel
+					.panel-heading(role='tab')
+						h4.panel-title
+							a.collapsed(aria-expanded='false', aria-controls='collapseThree')
+								| Where can I ask any additional questions?
+					.panel-collapse
+						| We will be releasing more product information from now until launch in the Fall to people that have registered to purchase (link to email signup). You can always ask us additional questions by emailing <a>support@getleaf.co.</a> Due to high email volumes, please allow us some time to answer.
 
 		section.as-seen-on
 			h2 As seen on
@@ -148,7 +198,8 @@ html(lang='en')
 				form(action="#").subscribe-holder
 					.input-group.subscribe-input-field
 						i.fa.fa-envelope(aria-hidden="true")
-						input(type="text" placeholder="E-mail")
+						input(type="text" placeholder="E-mail" data-validate="email")
+						.error-label The Email is not valid
 					.input-group.subscribe-button-field
 						button(type="submit") Get LEAF
 

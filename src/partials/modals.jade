@@ -5,7 +5,8 @@
 		form(action="#").subscribe-holder
 			.input-group.subscribe-input-field
 				i.fa.fa-envelope(aria-hidden="true")
-				input(type="text" placeholder="E-mail")
+				input(type="text" placeholder="E-mail" data-validate="email")
+				.error-label The Email is not valid
 			.input-group.subscribe-button-field
 				button(type="submit") Discount, please
 	.modal-label

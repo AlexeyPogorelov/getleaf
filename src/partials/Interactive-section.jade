@@ -1,8 +1,7 @@
 
 //- include ./../css/interactive-section.sass
 
-section.interactive-maps-section
-	link(rel='stylesheet', href='../css/animations.css')
+section.interactive-maps-section#interactive-maps-section
 	link(rel='stylesheet', href='../css/fonts.css')
 	link(rel='stylesheet', href='../css/global.css')
 	link(rel='stylesheet', href='../css/interactive-section.css')
@@ -17,39 +16,48 @@ section.interactive-maps-section
 			.layer-trigger-1
 				span Carbon filter
 				.tooltip
-					p Reprehenderit ipsum laudantium harum ullam quos totam repudiandae iure sunt eius, accusamus, ut doloribus enim placeat praesentium asperiores, corrupti! Provident cum quisquam libero similique? Officiis esse, aperiam laborum consectetur maxime!
+					h4 Carbon filter
+					p All the air from the grow chamber passes through the active carbon to absorb all smells and other impurities. Highly effective.
 			.layer-trigger-2
 				span HD camera
 				.tooltip
-					p Many people sign up for affiliate programs with the hopes of making some serious money. They advertise a few places and then wait for the money to start pouring in.
+					h4 HD camera
+					p Streaming live video directly to your LEAF app so you can check on your plants at all times. Also analyzes the height and width of your plants.
 			.layer-trigger-3
 				span Water sensing system
 				.tooltip
-					p Nemo rerum error placeat ipsa, asperiores blanditiis doloribus architecto nostrum quam rem nisi perferendis obcaecati voluptatem non, dicta tempora molestiae neque. Inventore debitis praesentium voluptatibus adipisci?
+					h4 Water sensing system
+					p Equipped with pH and TDS sensors to help maintain a balanced pH in your reservoir as well as knowing when to dose nutrients.
 			.layer-trigger-4
 				span O2 enrichment system
 				.tooltip
-					p Hic soluta, a commodi, deserunt at eius est aut, dicta ipsam laboriosam possimus nulla modi. Sapiente, illo ipsam. Debitis quo provident delectus aliquid deleniti voluptate, ullam nobis nostrum corporis mollitia!
+					h4 O2 enrichment system
+					p Oxygen is an essential plant nutrient. The O2 system supplies your roots with oxygen as well as mixes the nutrients.
 			.layer-trigger-5
 				span Air control system
 				.tooltip
-					p Perferendis voluptatem fugit cupiditate doloremque explicabo eum tempore, provident praesentium incidunt adipisci sunt voluptatibus. Explicabo dolores sed quas fuga repudiandae alias aliquam quae, necessitatibus doloremque laudantium excepturi, eligendi, nisi nostrum.
+					h4 Air control system
+					p You have precise control over the temperature and humidity of your LEAF, down to a single degree.
 			.layer-trigger-6
-				span BIOS LED
+				span BIOS™ LED light
 				.tooltip
-					p Dolores natus laboriosam nam nemo rerum error placeat ipsa, asperiores blanditiis doloribus architecto nostrum quam rem nisi perferendis obcaecati voluptatem non, dicta tempora molestiae neque. Inventore debitis praesentium voluptatibus adipisci?
+					h4 BIOS™ LED light
+					p Powerful NASA technology built from the ground up to grow the highest quality medicine. Broad “white” spectrum (not purple) with highest PAR photon efficacy.
 			.layer-trigger-7
 				span Toolbox
 				.tooltip
-					p Dolores natus laboriosam nam nemo rerum error placeat ipsa, asperiores blanditiis doloribus architecto nostrum quam rem nisi perferendis obcaecati voluptatem non, dicta tempora molestiae neque. Inventore debitis praesentium voluptatibus adipisci?
+					h4 Toolbox
+					p Comes with everything you need to maintain your grow as well as harvest. Located conveniently inside your Leaf.
 			.layer-trigger-8
 				span Water exchange system
 				.tooltip
-					p Dolores natus laboriosam nam nemo rerum error placeat ipsa, asperiores blanditiis doloribus architecto nostrum quam rem nisi perferendis obcaecati voluptatem non, dicta tempora molestiae neque. Inventore debitis praesentium voluptatibus adipisci?
+					h4 Water exchange system
+					p Easy water reservoir changes at the click of a button. Note: this is optional, so if you don’t have the right connections in your home don’t worry!
 			.layer-trigger-9
 				span Dosing system
 				.tooltip
-					p Dolores natus laboriosam nam nemo rerum error placeat ipsa, asperiores blanditiis doloribus architecto nostrum quam rem nisi perferendis obcaecati voluptatem non, dicta tempora molestiae neque. Inventore debitis praesentium voluptatibus adipisci?
+					h4 Dosing system
+					p Automatically doses nutrients for your plants exactly when they need them. No more spending time on feeding charts.
 			.interactive-layer-0(style="background-image: url('http://pogorelov.cc.ua/getleaf/img/content/leaf_pics/leaf_standart.jpg')", alt="layer")
 			.interactive-layer-1(style="background-image: url('http://pogorelov.cc.ua/getleaf/img/content/leaf_pics/carbon_filter.jpg')", alt="layer")
 			.interactive-layer-2(style="background-image: url('http://pogorelov.cc.ua/getleaf/img/content/leaf_pics/hd_cam.jpg')", alt="layer")
@@ -63,10 +71,19 @@ section.interactive-maps-section
 		.mobileapp#mobileapp
 			.layer-trigger-1
 				span Live stream
+				.tooltip
+					h4 Live stream
+					p Check grow progress from anywhere, with LEAF’s built in HD camera. You can also create awesome timelapse videos of your grow!
 			.layer-trigger-2
 				span Custom recipes
+				.tooltip
+					h4 Custom recipes
+					p Want to finely tune a recipe for your exact strain or plant? Go for it! LEAF allows you to customize every parameter of your grow.
 			.layer-trigger-3
 				span Monitor grow conditions
+				.tooltip
+					h4 Monitor grow conditions
+					p Know exactly what is going on inside your LEAF. Air temp, humidity, water temp, pH, TDS, plant height, water level. You’re in control
 			.layer-label-1
 				span Step by step video instruction
 			.layer-label-2
@@ -75,16 +92,22 @@ section.interactive-maps-section
 				span Intellgent alerts
 			.interactive-layer-0(style="background-image: url('http://pogorelov.cc.ua/getleaf/img/content/leaf_pics/phone.jpg')", alt="layer")
 
-	//- script(src='vendor/jquery/dist/jquery.js')
-	//- script.
+	script(src='../vendor/jquery/dist/jquery.js')
+	script.
 		$(document).on('ready', function () {
+			var $window = $(window),
+				winWidth = $window.width();
+
+			$window.on('resize', function () {
+				winWidth = $window.width();
+			})
 
 			// #interactive
 			var interactive = (function () {
 				var activeTab = 0,
-					$moreAbout = $('#more-about'),
-					$tabs = $moreAbout.find('.tabs-holder'),
-					$interactive = $moreAbout.find('#interactive, #mobileapp');
+					$interactiveMapsSection = $('#interactive-maps-section'),
+					$tabs = $interactiveMapsSection.find('.tabs-holder'),
+					$interactive = $interactiveMapsSection.find('#interactive, #mobileapp');
 				$tabs.find('[data-tab="interactive"]')
 					.on('click', function () {
 						$(this).addClass('active').siblings().removeClass('active');

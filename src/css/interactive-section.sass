@@ -2,11 +2,11 @@
 
 
 section.interactive-maps-section
-	padding-bottom: 40px
+	// padding-bottom: 40px
 	overflow: hidden
 	text-align: center
 	$more-about-mobile-media: 890px
-	@media (max-width: $tablet)
+	@media (max-width: $more-about-mobile-media)
 		padding-bottom: 0
 	h2
 		line-height: 1em
@@ -16,7 +16,7 @@ section.interactive-maps-section
 
 		font-size: 55px
 		letter-spacing: 3px
-		@media (max-width: $tablet)
+		@media (max-width: $more-about-mobile-media)
 			font-size: 30px
 			letter-spacing: 1px
 			margin-bottom: 17px
@@ -24,12 +24,12 @@ section.interactive-maps-section
 			color: $main-color
 			font-weight: 700
 			letter-spacing: 3px
-			@media (max-width: $tablet)
+			@media (max-width: $more-about-mobile-media)
 				letter-spacing: 1px
 	.tabs-holder
 		margin-top: 26px
 		text-align: center
-		@media (max-width: $tablet)
+		@media (max-width: $more-about-mobile-media)
 			margin-top: 17px
 		.tab
 			display: inline-block
@@ -43,7 +43,7 @@ section.interactive-maps-section
 			margin: 0 16px
 			position: relative
 			transition: color .1s
-			@media (max-width: $tablet)
+			@media (max-width: $more-about-mobile-media)
 				font-size: 15px
 				letter-spacing: 1px
 				margin: 0 11px
@@ -60,7 +60,7 @@ section.interactive-maps-section
 				background-image: #999
 				background-image: repeating-linear-gradient(90deg, #999 0, #999 10px, transparent 10px, transparent 20px)
 				transition: background .1s
-				@media (max-width: $tablet)
+				@media (max-width: $more-about-mobile-media)
 					bottom: -9px
 			&:hover:after
 				background-image: repeating-linear-gradient(90deg, $main-color 0, $main-color 10px, transparent 10px, transparent 20px)
@@ -76,25 +76,27 @@ section.interactive-maps-section
 		white-space: nowrap
 	.interactive, .mobileapp
 		display: inline-block
-		margin: 82px auto 54px
+		// margin: 82px auto 54px
+		margin: 82px auto 0
 		position: relative
 		transition: transform .6s, opacity .6s
 		white-space: normal
 		width: 100%
 		height: 644px
 		height: 44vw
-		@media (max-width: $tablet)
+		@media (max-width: $more-about-mobile-media)
 			margin: 35px auto 10px
 			height: 100vw
 	.interactive
-		// TODO remove margin left
-		// margin-left: 13px
 		%trigger
 			position: absolute
 			cursor: pointer
 			white-space: nowrap
 			z-index: 1
 			height: 15px
+			transition: opacity .3s
+			@media (max-width: $more-about-mobile-media)
+				transform: none !important
 			span
 				color: #777
 				font-size: 17px
@@ -124,14 +126,34 @@ section.interactive-maps-section
 
 				padding: 25px
 				transform: translateY(20px) translateZ(1px)
-				transition: opacity .3s, transform .3s
-				// @media (max-width: $more-about-mobile-media)
-					// transform: translateX(-50%) translateZ(1px)
+				transition: opacity .3s, transform .3s, visibility .3s
+				@media (max-width: $more-about-mobile-media)
+					font-size: 13px
+					line-height: 1.125em
+					border: 3px solid #5cffdc
+					transform: translateY(-100%) translateZ(1px) !important
+					left: 0 !important
+					top: 0 !important
+
+					width: 100vw !important;
+					right: auto !important;
 				&, p
 					color: grey
 					font-size: 13px
 					font-weight: 400
 					line-height: 1.25em
+					@media (max-width: $more-about-mobile-media)
+						font-weight: 100
+				h2, h3, h4, h5, h6
+					display: none
+					color: grey
+					font-size: 15px
+					font-weight: 500
+					letter-spacing: 1px
+					line-height: 1.25em
+					margin-bottom: 6px
+					@media (max-width: $more-about-mobile-media)
+						display: block
 			&:after
 				content: ''
 				display: block
@@ -170,6 +192,7 @@ section.interactive-maps-section
 					visibility: visible
 					opacity: 1
 					transform: translateY(0) translateZ(1px)
+					transition: opacity .3s .2s, transform .3s .2s, visibility .3s .2s
 		&.tooltip-visible
 			%trigger:not(:hover)
 				opacity: 0
@@ -209,6 +232,8 @@ section.interactive-maps-section
 			@extend %layer
 		.layer-trigger-1
 			@extend %trigger
+			$offPx: 248px
+			$offVw: 20.2vw
 			transform: translateX(-100%)
 			left: 22%
 			top: 11%
@@ -216,32 +241,34 @@ section.interactive-maps-section
 				padding-left: 0
 				padding-right: 14px
 			&:after
-				width: 248px
-				width: 20.2vw
+				width: $offPx
+				width: $offVw
 			&:before
 				margin-right: -6px
-				right: -248px
-				right: -20.2vw
+				right: -$offPx
+				right: -$offVw
+				@media (max-width: $more-about-mobile-media)
+					right: 0
 			&:hover
 				& ~ .interactive-layer-1
 					opacity: 1
 		.layer-trigger-2
 			@extend %trigger
+			$offPx: 178px
+			$offVw: 14vw
 			transform: translateX(-100%)
-			left: 27%
 			left: 23.6%
-			top: 19.4%
 			top: 18.4%
 			span
 				padding-left: 0
 				padding-right: 14px
 			&:after
-				width: 178px
-				width: 14vw
+				width: $offPx
+				width: $offVw
 			&:before
 				margin-right: -6px
-				right: -178px
-				right: -14vw
+				right: -$offPx
+				right: -$offVw
 			&:hover
 				& ~ .interactive-layer-2
 					opacity: 1
@@ -390,8 +417,9 @@ section.interactive-maps-section
 			white-space: nowrap
 			z-index: 1
 			height: 15px
+			transition: opacity .3s
 			@media (max-width: $more-about-mobile-media)
-				display: none
+				transform: none !important
 			span
 				color: #777
 				font-size: 17px
@@ -420,14 +448,34 @@ section.interactive-maps-section
 
 				padding: 25px
 				transform: translateY(20px) translateZ(1px)
-				transition: opacity .3s, transform .3s
-				// @media (max-width: $more-about-mobile-media)
-					// transform: translateX(-50%) translateZ(1px)
+				transition: opacity .3s, transform .3s, visibility .3s
+				@media (max-width: $more-about-mobile-media)
+					font-size: 13px
+					line-height: 1.125em
+					border: 3px solid #5cffdc
+					transform: translateY(-100%) translateZ(1px) !important
+					left: 0 !important
+					top: 0 !important
+
+					width: 100vw !important;
+					right: auto !important;
 				&, p
 					color: grey
 					font-size: 13px
 					font-weight: 400
 					line-height: 1.25em
+					@media (max-width: $more-about-mobile-media)
+						font-weight: 100
+				h2, h3, h4, h5, h6
+					display: none
+					color: grey
+					font-size: 15px
+					font-weight: 500
+					letter-spacing: 1px
+					line-height: 1.25em
+					margin-bottom: 6px
+					@media (max-width: $more-about-mobile-media)
+						display: block
 			&:after
 				content: ''
 				display: block
@@ -466,6 +514,7 @@ section.interactive-maps-section
 					visibility: visible
 					opacity: 1
 					transform: translateY(0) translateZ(1px)
+					transition: opacity .3s .2s, transform .3s .2s, visibility .3s .2s
 		&.tooltip-visible
 			%trigger:not(:hover)
 				opacity: 0
@@ -483,6 +532,8 @@ section.interactive-maps-section
 			line-height: 23px
 			@media (max-width: $more-about-mobile-media)
 				left: 61%
+			@media (max-width: 680px)
+				left: 41%
 		%layer
 			position: absolute
 			left: 0
@@ -497,6 +548,7 @@ section.interactive-maps-section
 			background-size: contain
 			@media (max-width: $more-about-mobile-media)
 				background-position: 20px 50%
+				background-size: 42%
 		.interactive-layer-0
 			@extend %layer
 			opacity: 1

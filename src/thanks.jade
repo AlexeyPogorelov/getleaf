@@ -39,13 +39,13 @@ html(lang='en')
 
 		section.discount-status
 			.content-holder
-				h3 Rather than spent money on advetiging we decided ro <strong> reward you!</strong> When even one friend signs up (for free) we’ll thank you with <strong> $100</strong>
+				h3 Rather than spent money on advetiging we decided ro <strong> reward you!</strong> When even one friend signs up (for free) we’ll thank you <b> with <strong> $100</strong> </b>
 				.discount-status-holder
-					mixin discount-status-point (number, description, active)
+					mixin discount-status-point (number, description, friend, active)
 						.discount-status-point(class= active ? 'active' : '')
 							.icon-holder
 								.number= number
-								.label friends
+								.label= friend
 							.description-holder
 								span!= description
 
@@ -56,20 +56,24 @@ html(lang='en')
 						+discount-status-point (
 							'1',
 							'$100 off',
+							'friend',
 							true
 						)
 						+discount-status-point (
 							'5',
 							'$150 off',
+							'friends',
 							true
 						)
 						+discount-status-point (
 							'10',
-							'$200 off'
+							'$200 off',
+							'friends'
 						)
 						+discount-status-point (
 							'25',
-							'$250 off <b>+ special bonus</b>'
+							'$250 off <b>+ special bonus</b>',
+							'friends'
 						)
 
 
