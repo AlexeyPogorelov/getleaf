@@ -75,6 +75,8 @@ section.interactive-maps-section
 		overflow: hidden
 		white-space: nowrap
 		padding-bottom: 60px
+		font-size: 0
+		letter-spacing: 0
 		@media (max-width: $more-about-mobile-media)
 			padding-bottom: 20px
 	.interactive, .mobileapp
@@ -507,6 +509,7 @@ section.interactive-maps-section
 			transition: opacity .3s
 			@media (max-width: $more-about-mobile-media)
 				transform: none !important
+				z-index: 10
 			span
 				color: #777
 				font-size: 17px
@@ -519,7 +522,10 @@ section.interactive-maps-section
 				@media (max-width: $more-about-mobile-media)
 					color: transparent
 					pointer-events: none
+					font-size: 0
+					letter-spacing: 0
 			.tooltip
+				backdrop-filter: blur(2px)
 				position: absolute
 				opacity: 0
 				top: 30px
@@ -541,10 +547,10 @@ section.interactive-maps-section
 					line-height: 1.125em
 					border: 3px solid #5cffdc
 					transform: translateY(-100%) translateZ(1px) !important
-					left: 0 !important
 					top: 0 !important
 
-					width: 100vw !important;
+					width: 300px !important;
+					width: calc(100vw - 10px) !important;
 					right: auto !important;
 				&, p
 					color: grey
@@ -593,6 +599,11 @@ section.interactive-maps-section
 					background-color: #00bf82
 					border: 3px solid #56ffc9
 			&:hover
+				&:before
+					@media (max-width: $more-about-mobile-media)
+						background-color: #7cffdc
+						border-color: #7cffdc
+						opacity: 1
 				span
 					color: $main-color
 					@media (max-width: $more-about-mobile-media)
@@ -604,8 +615,11 @@ section.interactive-maps-section
 					transition: opacity .3s .2s, transform .3s .2s, visibility .3s .2s
 		&.tooltip-visible
 			%trigger:not(:hover)
-				opacity: 0
-				pointer-events: none
+				@media (min-width: $more-about-mobile-media + 1px)
+					opacity: 0
+					pointer-events: none
+				@media (max-width: $more-about-mobile-media)
+					z-index: 1
 		%layer-label
 			position: absolute
 			text-align: left
@@ -620,7 +634,11 @@ section.interactive-maps-section
 			@media (max-width: $more-about-mobile-media)
 				left: 61%
 			@media (max-width: 680px)
-				left: 41%
+				left: 54%
+				font-size: 13px
+				font-weight: 600
+				line-height: 1.125em
+				max-width: 40%
 		%layer
 			position: absolute
 			left: 0
@@ -647,55 +665,85 @@ section.interactive-maps-section
 			@extend %layer
 		.layer-trigger-1
 			@extend %trigger
+			$offPx: 248px
+			$offVw: 20.2vw
 			transform: translateX(-100%)
 			left: 22%
 			top: 23%
+			@media (max-width: $more-about-mobile-media)
+				left: 6%
+				top: 25%
+				transform: none
 			span
 				padding-left: 0
 				padding-right: 14px
 			&:after
-				width: 248px
-				width: 20.2vw
+				width: $offPx
+				width: $offVw
 			&:before
 				margin-right: -6px
-				right: -248px
-				right: -20.2vw
+				right: -$offPx
+				right: -$offVw
+				@media (max-width: $more-about-mobile-media)
+					right: 0
+			.tooltip
+				@media (max-width: $more-about-mobile-media)
+					left: calc(-6vw + 5px)
 			&:hover
 				& ~ .interactive-layer-1
 					opacity: 1
 		.layer-trigger-2
 			@extend %trigger
+			$offPx: 178px
+			$offVw: 14vw
 			transform: translateX(-100%)
 			left: 28.2%
 			top: 42%
+			@media (max-width: $more-about-mobile-media)
+				left: 16%
+				transform: none
 			span
 				padding-left: 0
 				padding-right: 14px
 			&:after
-				width: 178px
-				width: 14vw
+				width: $offPx
+				width: $offVw
 			&:before
 				margin-right: -6px
-				right: -178px
-				right: -14vw
+				right: -$offPx
+				right: -$offVw
+			.tooltip
+				@media (max-width: $more-about-mobile-media)
+					left: calc(-16vw + 5px)
 			&:hover
 				& ~ .interactive-layer-2
 					opacity: 1
 		.layer-trigger-3
 			@extend %trigger
+			$offPx: 178px
+			$offVw: 14vw
 			transform: translateX(-100%)
 			left: 28%
 			top: 76.3%
+			@media (max-width: $more-about-mobile-media)
+				top: 72.3%
+				left: 14%
+				transform: none
 			span
 				padding-left: 0
 				padding-right: 14px
 			&:after
-				width: 178px
-				width: 14vw
+				width: $offPx
+				width: $offVw
 			&:before
 				margin-right: -6px
-				right: -178px
-				right: -14vw
+				right: -$offPx
+				right: -$offVw
+				@media (max-width: $more-about-mobile-media)
+					right: 0
+			.tooltip
+				@media (max-width: $more-about-mobile-media)
+					left: calc(-14vw + 5px)
 			&:hover
 				& ~ .interactive-layer-3
 					opacity: 1

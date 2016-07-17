@@ -253,6 +253,9 @@ section.main-gallery
 
 			width: 270px
 			height: 270px
+
+			background-size: cover
+			background-position: 50% 50%
 			@media (max-width: 620px)
 				width: 260px
 				height: 260px
@@ -266,6 +269,7 @@ section.main-gallery
 				overflow: hidden
 				&:after
 					content: ''
+					pointer-events: none
 					border-radius: 20px
 					position: absolute
 					left: 0
@@ -281,6 +285,7 @@ section.main-gallery
 				left: 50%
 				top: 50%
 				width: 90%
+				pointer-events: none
 
 				color: white
 				font-size: 17px
