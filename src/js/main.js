@@ -457,15 +457,20 @@ $(document).on('ready', function () {
 
 				if ($target.length === 0) return;
 
-				$target.get(0).select();
+				$target
+					.get(0)
+					.select();
 
-				try {
-					document.execCommand('copy');
-					getleaf.notification('link copied');
-				} catch (e) {
-					getleaf.notification('Unable to copy');
-					console.error(e);
-				}
+				// setTimeout(function() {
+					try {
+						document.execCommand('copy');
+						getleaf.notification('link copied');
+					} catch (e) {
+						getleaf.notification('Unable to copy');
+						console.error(e);
+					}
+				// }, 10);
+
 			});
 
 		})();
