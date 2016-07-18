@@ -15,7 +15,7 @@ html(lang='en')
 				.content-holder
 					h1 Grow with <b>LEAF</b>
 					h4 Growing your own cannabis has never been easier
-					.play-button-holder.iconset-play-1(data-modal="#main-video-modal")
+					.play-button-holder.iconset-play-1.disabled(data-modal="#main-video-modal")
 			form(action="#").subscribe-holder
 				p.label Our first LEAF’s will be heavily discounted. Don’t miss out
 				.input-group.subscribe-input-field
@@ -27,14 +27,16 @@ html(lang='en')
 
 		section.main-gallery#main-gallery
 			h2 <b>LEAF </b> Features
+
 			mixin gallery (video, description)
 				li.gallery(style="background-image:url('" + video + '.jpg' + "')")
 					.video-holder
 						video(poster='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' muted)
-							source(src= video + ".mp4" type="video/mp4")
-							Your browser does not support HTML5 video.
+							source(amp-src= video + ".mp4" type="video/mp4")
+							p Your browser does not support HTML5 video.
 					.description
 						span= description
+
 			ul.gallerey-container
 				+gallery(
 					'http://pogorelov.cc.ua/getleaf/img/content/leaf_videos/1_color',

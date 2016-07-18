@@ -326,47 +326,6 @@ $(document).on('ready', function () {
 			return plg;
 		})();
 
-		// #interactive
-		// var interactive = (function () {
-		// 	var activeTab = 0,
-		// 		$moreAbout = $('#more-about'),
-		// 		$tabs = $moreAbout.find('.tabs-holder'),
-		// 		$interactive = $moreAbout.find('#interactive, #mobileapp');
-		// 	$tabs.find('[data-tab="interactive"]')
-		// 		.on('click', function () {
-		// 			$(this).addClass('active').siblings().removeClass('active');
-		// 			$interactive.css({
-		// 				'transform': 'translateX(0px)'
-		// 			});
-		// 			activeTab = 0;
-		// 		});
-		// 	$tabs.find('[data-tab="mobileapp"]')
-		// 		.on('click', function () {
-		// 			$(this).addClass('active').siblings().removeClass('active');
-		// 			$interactive.css({
-		// 				'transform': 'translateX(' + -winWidth + 'px)'
-		// 			});
-		// 			activeTab = 1;
-		// 		});
-		// 	$window.on('resize', function () {
-		// 		if (activeTab === 1) {
-		// 			$interactive.css({
-		// 				'transform': 'translateX(' + -winWidth + 'px)'
-		// 			});
-		// 		}
-		// 	});
-		// 	$interactive
-		// 		.find('.layer-trigger-1, .layer-trigger-2, .layer-trigger-3, .layer-trigger-4, .layer-trigger-5, .layer-trigger-6, .layer-trigger-7, .layer-trigger-8, .layer-trigger-9')
-		// 		.hover(
-		// 				function () {
-		// 					$interactive.addClass('tooltip-visible');
-		// 				},
-		// 				function () {
-		// 					$interactive.removeClass('tooltip-visible');
-		// 				}
-		// 			);
-
-		// })();
 
 		// notifications
 		getleaf.notification = (function () {
@@ -447,6 +406,7 @@ $(document).on('ready', function () {
 			return plg.show;
 		})();
 
+
 		// copy text
 		(function () {
 			var $triggers = $('[data-copy]');
@@ -491,40 +451,139 @@ $(document).on('ready', function () {
 
 		};
 
+
 		// videos holder
 		(function () {
 
 			// TODO refactor it
-
 			var $videoGallery = $('#main-gallery');
-			$videoGallery.find('li').each(function () {
-					var $this = $(this);
-						video = $this.find('video').get(0);
 
-					$this.find('video').load();
-					$this.find('video').muted = true;
-					$this.find('video').get(0).currentTime = 0.01;
+			// console.log( $.browser )
 
-					$this.on('mouseenter', function () {
-						$this = $(this);
-						$this.find('video').get(0).play();
+			if ( $.browser.desktop ) {
 
+				$videoGallery.find('li').each(function () {
+					var $this = $(this),
+						$video = $this.find('video'),
+						video = $video.get(0);
+
+					$video.find('source').each(function () {
+						var $self = $(this);
+						$self.attr('src',
+							$self.attr('amp-src')
+						)
 					});
 
-					$this.on('mouseleave', function () {
-						$this = $(this);
-						var video = $this.find('video').get(0);
+					video.load();
 
-						video.pause();
+					$video.on('canplay', function () {
+
+						$this.on('mouseenter', function () {
+							video.play();
+						});
+
+						$this.on('mouseleave', function () {
+							video.pause();
+							video.currentTime = 0.01;
+						});
+
+						video.muted = true;
 						video.currentTime = 0.01;
+
 					});
 
 				});
 
-			$videoGallery.find('.mobile-show-more').each(function () {
-			});
+			}
+
+			if ( $.browser.android ) {
+
+				$videoGallery.find('li').each(function () {
+
+					var $this = $(this),
+						$video = $this.find('video'),
+						video = $video.get(0),
+						$modal;
+
+						video.muted = true;
+						video.currentTime = 0.01;
+
+						$this.on('click', function () {
+
+							if ($modal) {
+
+								$modal.addClass('opened');
+
+							} else {
+
+								$video.find('source').each(function () {
+									var $self = $(this);
+									$self.attr('src',
+										$self.attr('amp-src')
+									)
+								});
+
+								$modal = $('<div>');
+								$modal
+									.addClass('modal-holder android-video')
+									.on('click', function (e) {
+										if (e.target === this) {
+											$(this).removeClass('opened');
+											video.pause();
+										}
+									})
+									.append(
+											$video
+										);
+								$('body').append($modal);
+
+								video.controls = true;
+								video.play();
+
+								setTimeout(function() {
+									$modal.addClass('opened');
+								}, 20);
+							}
+						});
+
+				});
+
+			}
+
+			if ( $.browser.iphone ) {
+
+				setTimeout(function () {
+
+					$videoGallery.find('li').each(function () {
+
+						var $this = $(this),
+							$video = $this.find('video'),
+							video = $video.get(0);
+
+						$video.find('source').each(function () {
+							var $self = $(this);
+							$self.attr('src',
+								$self.attr('amp-src')
+							)
+						});
+
+						video.load();
+
+						$video.on('canplay', function () {
+
+							video.muted = true;
+							video.currentTime = 0.01;
+
+						});
+
+					});
+
+				}, 1000)
+
+			}
 
 		})();
+
 
 		// validation
 		(function () {
@@ -534,8 +593,10 @@ $(document).on('ready', function () {
 
 		})();
 
+
 		// Collapse
 		$('#faq').collapse();
+
 
 		// navigation
 		(function () {
@@ -565,6 +626,7 @@ $(document).on('ready', function () {
 
 		})();
 
+
 		// scroll
 		(function () {
 
@@ -588,6 +650,7 @@ $(document).on('ready', function () {
 			});
 
 		})();
+
 
 		// show more
 		(function () {
@@ -640,12 +703,14 @@ $(document).on('ready', function () {
 
 });
 
+
 // YouTube
 (function () {
-	var tag, firstScriptTag, youTube, playerDefaults, video, $mainVideoBackground;
+	var tag, firstScriptTag, youTube, playerDefaults, video, $mainVideoBackground, $triggerVideoModal;
 
 	$mainVideoBackground = $('#main-video-background');
-	
+	$triggerVideoModal = $('[data-modal="#main-video-modal"]');
+
 	tag = document.createElement('script');
 	tag.src = 'https://www.youtube.com/player_api';
 
@@ -674,6 +739,7 @@ $(document).on('ready', function () {
 		// youTube.loadVideoById( video );
 		// youTube.mute();
 		// youTube.pauseVideo();
+		$triggerVideoModal.removeClass('disabled');
 		getleaf.video = youTube;
 	};
 	window.onPlayerStateChange = function (e) {
@@ -683,7 +749,7 @@ $(document).on('ready', function () {
 		// }
 	};
 
-	$('[data-modal="#main-video-modal"]').one('click', function () {
+	$triggerVideoModal.one('click', function () {
 		youTube.loadVideoById( video );
 	});
 
