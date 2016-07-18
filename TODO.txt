@@ -2,4 +2,8 @@ error label animation
 
 safari madal animation
 
-copy to buffer
++ copy to buffer
+
++ loop video
+
+

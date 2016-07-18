@@ -411,17 +411,34 @@ $(document).on('ready', function () {
 		(function () {
 			var $triggers = $('[data-copy]');
 
-			$triggers.on('click', function() {
+			$triggers.each(function () {
+
 				var $self = $(this),
-					$target = $( $self.attr('data-copy') );
+					$target = $( $self.attr('data-copy') ),
+					$clone = $target.clone(),
+					value = $target.val();
 
-				if ($target.length === 0) return;
+				$target.on('blur', function () {
+					$target.val( value );
+				});
 
-				$target
-					.get(0)
-					.select();
+				$clone.css({
+					'opacity': 0,
+					'left': -9999,
+					'position': 'absolute',
+					'pointer-events': 'none'
+				})
+				.insertAfter($target);
 
-				// setTimeout(function() {
+				$self.on('click', function() {
+
+					if ($target.length === 0) return;
+
+					// $target
+					$clone
+						.get(0)
+						.select();
+
 					try {
 						document.execCommand('copy');
 						getleaf.notification('link copied');
@@ -429,7 +446,8 @@ $(document).on('ready', function () {
 						getleaf.notification('Unable to copy');
 						console.error(e);
 					}
-				// }, 10);
+
+				});
 
 			});
 
@@ -470,7 +488,7 @@ $(document).on('ready', function () {
 						var $self = $(this);
 						$self.attr('src',
 							$self.attr('amp-src')
-						)
+						);
 					});
 
 					video.load();
@@ -484,6 +502,8 @@ $(document).on('ready', function () {
 							video.pause();
 							video.currentTime = 0.01;
 						});
+
+						// $this
 
 						video.muted = true;
 						video.currentTime = 0.01;
@@ -518,7 +538,7 @@ $(document).on('ready', function () {
 									var $self = $(this);
 									$self.attr('src',
 										$self.attr('amp-src')
-									)
+									);
 								});
 
 								$modal = $('<div>');
@@ -562,7 +582,7 @@ $(document).on('ready', function () {
 							var $self = $(this);
 							$self.attr('src',
 								$self.attr('amp-src')
-							)
+							);
 						});
 
 						video.load();
@@ -576,7 +596,7 @@ $(document).on('ready', function () {
 
 					});
 
-				}, 1000)
+				}, 1000);
 
 			}
 
