@@ -45,7 +45,7 @@ var serverConfig = {
 // SASS
 gulp.task('sass', function () {
 	gulp.src(path.src.style)
-		.pipe(sass().on('error', sass.logError))
+		.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
 		.pipe(autoprefixer({browsers:['last 4 versions']}))
 		// .pipe(cmq())
 		.pipe(gulp.dest(path.dist.css))
@@ -56,7 +56,7 @@ gulp.task('sass', function () {
 gulp.task('jade', function(){
 	gulp.src(path.src.html)
 		.pipe(jade({
-			pretty: true
+			pretty: false
 		}))
 		.pipe(gulp.dest(path.dist.html))
 		.pipe(reload({stream:true}));

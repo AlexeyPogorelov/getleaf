@@ -1,3 +1,5 @@
 error label animation
 
 safari madal animation
+
+copy to buffer

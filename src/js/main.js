@@ -455,10 +455,9 @@ $(document).on('ready', function () {
 		// videos holder
 		(function () {
 
-			// TODO refactor it
 			var $videoGallery = $('#main-gallery');
 
-			console.log( $.browser )
+			// console.log( $.browser )
 
 			if ( $.browser.desktop ) {
 
@@ -681,7 +680,12 @@ $(document).on('ready', function () {
 				}
 			};
 
-			$iframes.on('load', plg.resize);
+			$iframes.on('load', function () {
+				var self = this;
+				setTimeout(function() {
+					plg.resize.call(self);
+				}, 60);
+			});
 			$window.on('resize', plg.resizeIframes);
 
 			return {
