@@ -458,7 +458,7 @@ $(document).on('ready', function () {
 			// TODO refactor it
 			var $videoGallery = $('#main-gallery');
 
-			// console.log( $.browser )
+			console.log( $.browser )
 
 			if ( $.browser.desktop ) {
 
@@ -476,13 +476,12 @@ $(document).on('ready', function () {
 
 					video.load();
 
-					$video.on('canplay', function () {
+					$video.one('canplay', function () {
+						// console.log(this)
 
-						$this.on('mouseenter', function () {
+						$this.hover(function () {
 							video.play();
-						});
-
-						$this.on('mouseleave', function () {
+						}, function () {
 							video.pause();
 							video.currentTime = 0.01;
 						});

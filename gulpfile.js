@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
 	jade = require('gulp-jade'),
 	sass = require('gulp-sass'),
+	uglify = require('gulp-uglify'),
 	autoprefixer = require('gulp-autoprefixer'),
 	// cmq = require('gulp-combine-media-queries'),
 	browserSync = require('browser-sync'),
@@ -64,6 +65,7 @@ gulp.task('jade', function(){
 // SCRIPTS
 gulp.task('scripts', function(){
 	gulp.src(path.src.js)
+		.pipe(uglify())
 		.pipe(gulp.dest(path.dist.js))
 		.pipe(reload({stream:true}));
 });
