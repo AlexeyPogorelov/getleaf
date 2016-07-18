@@ -39,13 +39,21 @@ $table-leaderboard-mobile-width: 680px
 			line-height: 1.4em
 
 .leaderboard-table
-	margin-top: 70px
-	margin-bottom: 50px
+	margin-top: 27px
+	margin-bottom: 6px
 	counter-reset: leaderboard-table-counter
 	@media (max-width: $tablet)
 		margin-bottom: 20px
 	@media (max-width: $table-leaderboard-mobile-width)
 		margin-top: 44px
+	h1, h2, h3
+		color: #00bf82
+		font-size: 35px
+		font-weight: 900
+		letter-spacing: 4.38px
+		line-height: 1.5em
+		text-align: center
+		margin: 0 0 30px
 	.table-holder
 		overflow: visible
 		@media (max-width: $table-leaderboard-mobile-width)
@@ -63,6 +71,7 @@ $table-leaderboard-mobile-width: 680px
 			counter-increment: leaderboard-table-counter
 			content: counter(leaderboard-table-counter)
 	table
+		border-collapse: collapse
 		color: grey
 		margin-left: -12px
 		width: 100%
@@ -76,7 +85,7 @@ $table-leaderboard-mobile-width: 680px
 			font-size: 13px
 			letter-spacing: 0
 		td
-			padding: 0 0 23px
+			padding: 0 0 15px
 			@media (max-width: $table-leaderboard-mobile-width)
 				padding: 0 0 24px
 			&:first-child
@@ -124,7 +133,7 @@ $table-leaderboard-mobile-width: 680px
 					&:after
 						border-right: 1px solid #dff6ef
 	td
-		padding: 12px 0
+		padding: 10px 0
 		&:first-child
 			text-align: center
 			width: 1px
@@ -151,8 +160,8 @@ $table-leaderboard-mobile-width: 680px
 					position: static
 
 .leaderboard-status
-	margin-top: 55px
-	margin-bottom: 71px
+	margin-top: 6px
+	margin-bottom: 27px
 	@media (max-width: $tablet)
 		margin-bottom: 20px
 	.status-items
@@ -173,30 +182,28 @@ $table-leaderboard-mobile-width: 680px
 		background-color: #fafafa
 		text-align: center
 		margin: 10px
-		padding: 28px 10px
-		width: 200px
+		padding: 20px 10px
 		h6, h5, h4, h3, h2
-			display: block
-			font-size: 17px
+			font-size: 15px
 			font-weight: 400
-			letter-spacing: 1px
+			letter-spacing: 0.88px
 			line-height: 1em
-			margin-bottom: 15px
+			margin-bottom: 6px
 		.value
 			font-size: 23px
 			font-weight: 700
 			line-height: 1em
-			margin-top: 15px
+			margin-top: 6px
 
 .invite-friends-section
 	text-align: center
 	background-color: #fafafa
-	padding-top: 65px
+	padding-top: 33px
 	@media (max-width: $table-leaderboard-mobile-width)
 		padding-top: 45px
 	h2, h3, h4
 		font-size: 23px
-		font-weight: 500
+		font-weight: 600
 		line-height: 1.3em
 		color: grey
 		letter-spacing: 2px
@@ -212,8 +219,16 @@ $table-leaderboard-mobile-width: 680px
 			line-height: inherit
 			letter-spacing: inherit
 			color: $main-color
+
+	.link-sharing-holder, .separator-sharing-holder, .socials-sharing-holder
+		display: inline-block
+		vertical-align: middle
+		margin-top: 16px
+		margin-bottom: 26px
+		@media (max-width: $table-leaderboard-mobile-width)
+			display: block
+
 	.socials-sharing-holder
-		margin-top: 3px
 		& > *
 			display: inline-block
 			vertical-align: top
@@ -222,11 +237,11 @@ $table-leaderboard-mobile-width: 680px
 			font-weight: 400
 			line-height: 1em
 			position: relative
-			margin: 20px 10px
+			margin: 7px 5px
 
 			text-align: center
-			width: 130px
-			height: 64px
+			width: 110px
+			height: 50px
 			// border-radius: 10px
 			@media (max-width: $table-leaderboard-mobile-width)
 				margin: 20px 5px
@@ -239,7 +254,7 @@ $table-leaderboard-mobile-width: 680px
 			vertical-align: middle
 			font: normal normal normal 25px/1em FontAwesome
 			color: white
-			margin-right: 20px
+			margin-right: 10px
 			@media (max-width: $table-leaderboard-mobile-width)
 				margin-left: 2px
 				margin-right: 8px
@@ -251,7 +266,7 @@ $table-leaderboard-mobile-width: 680px
 			left: 0
 			top: 0
 			text-align: center
-			line-height: 64px
+			line-height: 52px
 			width: 100%
 			z-index: 1
 			@media (max-width: $table-leaderboard-mobile-width)
@@ -259,8 +274,8 @@ $table-leaderboard-mobile-width: 680px
 		.stButton
 			position: relative
 			position: absolute
-			width: 130px
-			height: 64px
+			width: 110px
+			height: 52px
 			border-radius: 10px
 			left: 0
 			top: 0
@@ -287,12 +302,16 @@ $table-leaderboard-mobile-width: 680px
 				&:hover
 					background-color: #5058c3 + #222222
 		.st_twitter_large
+			@media (min-width: $table-leaderboard-mobile-width + 1px)
+				width: 120px
 			.label
 				&:before
 					@extend %pseudo-icon
 					content: '\f099'
 			.stButton
 				background-color: #35aaff
+				@media (min-width: $table-leaderboard-mobile-width + 1px)
+					width: 120px
 				&:hover
 					background-color: #35aaff + #222222
 		.st_email_large
@@ -307,24 +326,20 @@ $table-leaderboard-mobile-width: 680px
 					background-color: #f09059 + #222222
 
 	.separator-sharing-holder
-		margin-top: 10px
-		margin-bottom: 32px
 		text-align: center
 		color: grey
-		font-size: 23px
 		font-weight: 700
-		line-height: 1.313em
-		letter-spacing: 2px
+		letter-spacing: 1px
+		font-size: 20px
+		line-height: 1em
+		margin-left: 17px
+		margin-right: 17px
 		@media (max-width: $table-leaderboard-mobile-width)
 			font-size: 30px
 			letter-spacing: 1px
 			line-height: 1em
-			margin-top: 0
-			margin-bottom: 0
 
 	.link-sharing-holder
-		margin-top: 30px
-		padding-bottom: 55px
 		@media (max-width: $tablet)
 			margin-top: 24px
 			padding-left: 20px
@@ -343,11 +358,18 @@ $table-leaderboard-mobile-width: 680px
 					width: 100%
 		.subscribe-input-field
 			input
-				width: 383px
+				width: 300px
+				background-color: #ebebeb
+				padding-left: 14px
+				padding-right: 14px
+				height: 52px
+				&::placeholder
+					font-weight: 100
 				@media (max-width: $tablet)
 					width: 100%
 		.subscribe-button-field
 			button
-				margin-left: 18px
+				margin-left: 10px
+				padding: 17px 19px
 				@media (max-width: $tablet)
 					margin-left: 0

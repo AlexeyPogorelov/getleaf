@@ -6,11 +6,22 @@ $table-leaderboard-mobile-width: 680px
 	background-size: cover
 	text-align: center
 	position: relative
-	padding: 182px 40px 36px
+	padding: 28px 40px 36px
 	margin-bottom: 50px
 	@media (max-width: $table-leaderboard-mobile-width)
 		padding: 124px 14px 33px
 		margin-bottom: 40px
+	&:before
+		content: ''
+		position: absolute
+		left: 0
+		top: 0
+		right: 0
+		bottom: 0
+		background: rgba(0,0,0,0.1)
+		pointer-events: none
+		@media (max-width: $table-leaderboard-mobile-width)
+			background: rgba(0,0,0,0.2)
 	.close-thanks-holder
 		// display: none
 		position: absolute
@@ -24,15 +35,16 @@ $table-leaderboard-mobile-width: 680px
 			top: 13px
 	h1, h2, h3
 		color: white
-		font-size: 35px
 		font-weight: 700
-		line-height: 1.4em
-		letter-spacing: 2px
-		max-width: 800px
+		max-width: 534px
 		padding: 0 20px
+		font-size: 20px
+		letter-spacing: 1px
+		line-height: 1.67em
 
 		position: relative
 		margin: 0 auto
+
 		@media (max-width: $table-leaderboard-mobile-width)
 			color: white
 			font-size: 17px
@@ -40,20 +52,7 @@ $table-leaderboard-mobile-width: 680px
 			line-height: 1.438em
 			letter-spacing: 1px
 
-.thanks-header
-	position: relative
-	&:before
-		content: ''
-		position: absolute
-		left: 0
-		top: 0
-		right: 0
-		bottom: 0
-		background: rgba(0,0,0,0.1)
-		pointer-events: none
-		@media (max-width: $table-leaderboard-mobile-width)
-			background: rgba(0,0,0,0.2)
-	& + .invite-friends-section
+	&.invite-friends-section
 		background-color: transparent
 		padding-top: 11px
 		h1, h2, h3
@@ -70,9 +69,9 @@ $table-leaderboard-mobile-width: 680px
 		.subscribe-input-field
 			input
 				background: #fafafa
-		.separator-sharing-holder
-			font-size: 35px
-			margin-top: 4px
+		// .separator-sharing-holder
+		// 	font-size: 35px
+		// 	margin-top: 4px
 		.link-sharing-holder
 			@media (max-width: $table-leaderboard-mobile-width)
 				padding-bottom: 1px
