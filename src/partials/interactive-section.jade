@@ -86,10 +86,16 @@ section.interactive-maps-section#interactive-maps-section
 					p Know exactly what is going on inside your LEAF. Air temp, humidity, water temp, pH, TDS, plant height, water level. You’re in control
 			.layer-label-1
 				span Step by step video instruction
+				.tooltip
+					p Follow accurate, easy to understand, step by step video instructions from our master growers.
 			.layer-label-2
 				span Sync community recipes
+				.tooltip
+					p Know exactly what is going on inside your LEAF. Air temp, humidity, water temp, pH, TDS, plant height, water level. You’re in control
 			.layer-label-3
-				span Intellgent alerts
+				span Intelligent alerts
+				.tooltip
+					p LEAF works on its own and only lets you know when it needs you. No guesswork and no unnecessary notifications.
 			.interactive-layer-0(style="background-image: url('http://pogorelov.cc.ua/getleaf/img/content/leaf_pics/phone.jpg')", alt="layer")
 
 	script(src='../vendor/jquery/dist/jquery.js')
@@ -137,7 +143,7 @@ section.interactive-maps-section#interactive-maps-section
 					}
 				});
 				$interactive
-					.find('.layer-trigger-1, .layer-trigger-2, .layer-trigger-3, .layer-trigger-4, .layer-trigger-5, .layer-trigger-6, .layer-trigger-7, .layer-trigger-8, .layer-trigger-9')
+					.find('.layer-trigger-1, .layer-trigger-2, .layer-trigger-3, .layer-trigger-4, .layer-trigger-5, .layer-trigger-6, .layer-trigger-7, .layer-trigger-8, .layer-trigger-9, .layer-label-1, .layer-label-2, .layer-label-3')
 					.hover(
 							function () {
 								$interactive.addClass('tooltip-visible');

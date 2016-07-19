@@ -7,10 +7,13 @@ $table-leaderboard-mobile-width: 680px
 	text-align: center
 	position: relative
 	padding: 28px 40px 36px
-	margin-bottom: 50px
+	padding-bottom: 8px
+	margin-bottom: 0
 	@media (max-width: $table-leaderboard-mobile-width)
-		padding: 124px 14px 33px
-		margin-bottom: 40px
+		background-size: auto 125px
+		background-position: 50% 0
+		padding: 55px 14px 1px
+		margin-bottom: 1px
 	&:before
 		content: ''
 		position: absolute
@@ -22,6 +25,7 @@ $table-leaderboard-mobile-width: 680px
 		pointer-events: none
 		@media (max-width: $table-leaderboard-mobile-width)
 			background: rgba(0,0,0,0.2)
+			height: 125px
 	.close-thanks-holder
 		// display: none
 		position: absolute
@@ -46,15 +50,20 @@ $table-leaderboard-mobile-width: 680px
 		margin: 0 auto
 
 		@media (max-width: $table-leaderboard-mobile-width)
-			color: white
-			font-size: 17px
+			padding: 0
 			font-weight: 700
+			color: white
+			font-size: 15px
+			font-weight: 500
 			line-height: 1.438em
-			letter-spacing: 1px
+			letter-spacing: 0
 
-	&.invite-friends-section
+	& .invite-friends-section
 		background-color: transparent
 		padding-top: 11px
+		@media (max-width: $table-leaderboard-mobile-width)
+			padding: 0
+			margin-top: 54px
 		h1, h2, h3
 			font-size: 43px
 			font-weight: 600
@@ -62,28 +71,69 @@ $table-leaderboard-mobile-width: 680px
 			letter-spacing: 2px
 			padding: 0 20px
 			max-width: 640px
-			margin: 0 auto 27px
+			margin: 0 auto 9px
 			@media (max-width: $table-leaderboard-mobile-width)
 				margin: 4px auto 0
 				font-size: 17px
+				letter-spacing: 0
+				padding: 0
+
+				font-size: 22px
+				font-weight: 600
+				line-height: 1.2em
+				color: grey
+				b
+					color: $main-color
 		.subscribe-input-field
+			@media (max-width: $table-leaderboard-mobile-width)
+				margin-bottom: 12px
 			input
 				background: #fafafa
 		// .separator-sharing-holder
 		// 	font-size: 35px
 		// 	margin-top: 4px
+		.separator-sharing-holder
+			color: white
+			font-size: 20px
+			font-weight: 700
+			letter-spacing: 1px
+			@media (max-width: $table-leaderboard-mobile-width)
+				color: grey
+				font-size: 20px
+				font-weight: 700
+				margin: 0
+		.socials-sharing-holder
+			@media (max-width: $table-leaderboard-mobile-width)
+				margin-top: 0
+				margin-bottom: 0
+			& > *
+				margin-top: 15px
+				margin-bottom: 15px
+				&:nth-child(1)
+					margin-left: 0 !important
+				&:nth-child(3)
+					margin-right: 0 !important
 		.link-sharing-holder
 			@media (max-width: $table-leaderboard-mobile-width)
-				padding-bottom: 1px
-
+				padding: 0 6px
+				margin-top: 16px
+			.subscribe-input-field, .subscribe-button-field
+				input
+					@media (max-width: $table-leaderboard-mobile-width)
+						padding-top: 4px
+						height: 64px
+				button
+					@media (max-width: $table-leaderboard-mobile-width)
+						height: 64px
 .discount-status
 	text-align: center
 	padding: 20px 20px 130px
-	margin: 34px auto 0
-	background-color: #fafafa
+	margin: 0 auto
+	// background-color: #fafafa
+	background-color: #f7f7f7
 	@media (max-width: $table-leaderboard-mobile-width + 40px)
 		margin: 7px auto 0
-		padding: 20px 20px 59px 30px
+		padding: 20px 14px 59px 30px
 	.content-holder
 		max-width: 720px
 		margin: 0 auto
@@ -92,9 +142,9 @@ $table-leaderboard-mobile-width: 680px
 		font-size: 19px
 		font-weight: 600
 		line-height: 1.438em
-		letter-spacing: 1px
+		letter-spacing: 0px
 		margin-top: 34px
-		margin-bottom: 54px
+		margin-bottom: 35px
 		b, strong
 			color: $main-color
 			font-size: inherit
@@ -104,8 +154,9 @@ $table-leaderboard-mobile-width: 680px
 		@media (max-width: $table-leaderboard-mobile-width + 40px)
 			font-size: 15px
 			line-height: 1.35em
-			font-weight: 600
+			font-weight: 500
 			letter-spacing: 0
+			margin-top: 6px
 			margin-bottom: 34px
 			text-align: left
 	.discount-status-holder

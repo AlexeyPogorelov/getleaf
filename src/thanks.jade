@@ -17,29 +17,28 @@ html(lang='en')
 				i.fa.fa-times(aria-hidden="true")
 			h1 We’ll let you know when your LEAF is available at discount pricing
 
-		section.invite-friends-section
-			.content-holder
-				h3 <strong>Share </strong> this special price and get another <strong> $100 off</strong>
+			.invite-friends-section
+				.content-holder
+					h3 <strong>Share </strong> this special price and get another <strong> $100 off</strong>
 
-			.socials-sharing-holder
-				span.st_facebook_large(displayText='Facebook')
-					span.label Share
-				span.st_twitter_large(displayText='Tweet')
-					span.label Tweet
-				//- span.st__large(displayText='')
-				span.st_email_large(displayText='Email')
-					span.label Send
-			.separator-sharing-holder
-				span or
-			.link-sharing-holder
-				.input-group.subscribe-input-field
-					input#share-link(type="text" value="http://example.com?kid=123")
-				.input-group.subscribe-button-field
-					button(type="submit" data-copy="#share-link") Copy link
+				.socials-sharing-holder
+					span.st_facebook_large(displayText='Facebook')
+						span.label Share
+					span.st_twitter_large(displayText='Tweet')
+						span.label Tweet
+					span.st_email_large(displayText='Email')
+						span.label Send
+				.separator-sharing-holder
+					span or
+				.link-sharing-holder
+					.input-group.subscribe-input-field
+						input#share-link(type="text" value="http://example.com?kid=123")
+					.input-group.subscribe-button-field
+						button(type="submit" data-copy="#share-link") Copy link
 
 		section.discount-status
 			.content-holder
-				h3 Rather than spent money on advetiging we decided ro <strong> reward you!</strong> When even one friend signs up (for free) we’ll thank you <b> with <strong> $100</strong> </b>
+				h3 Rather than spend money on advertising, we decided to <strong> reward you! </strong> When even one friend signs up (for free) we’ll thank you <strong> with $100 off.</strong> 
 				.discount-status-holder
 					mixin discount-status-point (number, description, friend, active)
 						.discount-status-point(class= active ? 'active' : '')
