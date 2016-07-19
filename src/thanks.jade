@@ -5,8 +5,8 @@ html(lang='en')
 
 		include ./partials/head.jade
 		include ./partials/opengraph.jade
-		meta(name="twitter:url" content="http://pogorelov.cc.ua/getleaf/leafboard.html")
-		meta(property="og:url" content="http://pogorelov.cc.ua/getleaf/leafboard.html")
+		meta(name="twitter:url" content="https://d1pr2kxbbu5gcx.cloudfront.net/leafboard.html")
+		meta(property="og:url" content="https://d1pr2kxbbu5gcx.cloudfront.net/leafboard.html")
 
 	body
 
@@ -38,7 +38,7 @@ html(lang='en')
 
 		section.discount-status
 			.content-holder
-				h3 Rather than spend money on advertising, we decided to <strong> reward you! </strong> When even one friend signs up (for free) we’ll thank you <strong> with $100 off.</strong> 
+				h3 Rather than spend money on advertising, we decided to <strong> reward you! </strong> When even one friend signs up (for free) we’ll thank you <strong class="nowrap"> with $100 off.</strong> 
 				.discount-status-holder
 					mixin discount-status-point (number, description, friend, active)
 						.discount-status-point(class= active ? 'active' : '')

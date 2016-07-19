@@ -572,6 +572,9 @@ section.interactive-maps-section
 				& ~ .interactive-layer-9
 					opacity: 1
 	.mobileapp
+		%trigger
+			&:before
+				opacity: .7
 		%layer
 			position: absolute
 			left: 0
@@ -585,7 +588,7 @@ section.interactive-maps-section
 			background-position: 50% 50%
 			background-size: contain
 			@media (max-width: $more-about-mobile-media)
-				background-position: 20px 50%
+				background-position: 20px 0
 				background-size: 42%
 		.interactive-layer-0
 			@extend %layer
@@ -605,7 +608,7 @@ section.interactive-maps-section
 			top: 23%
 			@media (max-width: $more-about-mobile-media)
 				left: 6%
-				top: 25%
+				top: 19%
 				transform: none
 			span
 				padding-left: 0
@@ -633,6 +636,7 @@ section.interactive-maps-section
 			left: 28.2%
 			top: 42%
 			@media (max-width: $more-about-mobile-media)
+				top: 36%
 				left: 16%
 				transform: none
 			span
@@ -659,7 +663,7 @@ section.interactive-maps-section
 			left: 28%
 			top: 76.3%
 			@media (max-width: $more-about-mobile-media)
-				top: 72.3%
+				top: 64%
 				left: 14%
 				transform: none
 			span
@@ -683,13 +687,13 @@ section.interactive-maps-section
 		.layer-label-1
 			@extend %trigger
 			@extend %layer-label
-			top: 22%
+			top: 16%
 		.layer-label-2
 			@extend %trigger
 			@extend %layer-label
-			top: 48%
+			top: 40%
 		.layer-label-3
 			@extend %trigger
 			@extend %layer-label
-			top: 72%
+			top: 66%
 

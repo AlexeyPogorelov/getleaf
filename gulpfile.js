@@ -44,6 +44,8 @@ var serverConfig = {
 
 // SASS
 gulp.task('sass', function () {
+	// outputStyle: 'expanded'
+	// outputStyle: 'compressed'
 	gulp.src(path.src.style)
 		.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
 		.pipe(autoprefixer({browsers:['last 4 versions']}))

@@ -12,3 +12,23 @@
 	.modal-label
 		span Our first LEAF’s will be heavily discounted. Don’t miss out
 
+.modal-holder#get-early-acces.get-early-acces(data-cross="cross-navigation")
+	.modal-content
+		.pop-up-holder
+			.content-holder
+				h2 Get early acces and an exclusive discount to <b>LEAF!</b>
+				h4 The pre-order queue for batch two is filling up quikly.
+				p Reserve your spot in line and exclusive discount by adding your email below.
+
+				form(action="#").form
+					.input-group.subscribe-input-field
+						i.fa.fa-envelope(aria-hidden="true")
+						input(type="text" placeholder="E-mail" data-validate="email")
+						.error-label The Email is not valid
+					.input-group.subscribe-button-field
+						button(type="submit") Discount, please
+
+				.form-label *All emails kept confidential. We hate spam too!
+
+			.image-holder
+				img(src="https://d1pr2kxbbu5gcx.cloudfront.net/img/content/leaf_pics/leaf_standart.jpg", alt="growbox")

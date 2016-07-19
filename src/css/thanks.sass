@@ -10,8 +10,8 @@ $table-leaderboard-mobile-width: 680px
 	padding-bottom: 8px
 	margin-bottom: 0
 	@media (max-width: $table-leaderboard-mobile-width)
-		background-size: auto 125px
-		background-position: 50% 0
+		// background-size: auto 125px
+		// background-position: 50% 0
 		padding: 55px 14px 1px
 		margin-bottom: 1px
 	&:before
@@ -23,9 +23,9 @@ $table-leaderboard-mobile-width: 680px
 		bottom: 0
 		background: rgba(0,0,0,0.1)
 		pointer-events: none
-		@media (max-width: $table-leaderboard-mobile-width)
-			background: rgba(0,0,0,0.2)
-			height: 125px
+		// @media (max-width: $table-leaderboard-mobile-width)
+		// 	background: rgba(0,0,0,0.2)
+		// 	height: 125px
 	.close-thanks-holder
 		// display: none
 		position: absolute
@@ -57,7 +57,6 @@ $table-leaderboard-mobile-width: 680px
 			font-weight: 500
 			line-height: 1.438em
 			letter-spacing: 0
-
 	& .invite-friends-section
 		background-color: transparent
 		padding-top: 11px
@@ -81,7 +80,7 @@ $table-leaderboard-mobile-width: 680px
 				font-size: 22px
 				font-weight: 600
 				line-height: 1.2em
-				color: grey
+				// color: grey
 				b
 					color: $main-color
 		.subscribe-input-field
@@ -98,7 +97,7 @@ $table-leaderboard-mobile-width: 680px
 			font-weight: 700
 			letter-spacing: 1px
 			@media (max-width: $table-leaderboard-mobile-width)
-				color: grey
+				// color: grey
 				font-size: 20px
 				font-weight: 700
 				margin: 0
@@ -131,8 +130,9 @@ $table-leaderboard-mobile-width: 680px
 	margin: 0 auto
 	// background-color: #fafafa
 	background-color: #f7f7f7
+	min-height: calc(100vh - 473px)
 	@media (max-width: $table-leaderboard-mobile-width + 40px)
-		margin: 7px auto 0
+		margin: 0 auto
 		padding: 20px 14px 59px 30px
 	.content-holder
 		max-width: 720px

@@ -41,6 +41,7 @@ $table-leaderboard-mobile-width: 680px
 .leaderboard-table
 	margin-top: 27px
 	margin-bottom: 6px
+	min-height: calc(100vh - 441px)
 	counter-reset: leaderboard-table-counter
 	@media (max-width: $tablet)
 		margin-bottom: 20px
@@ -48,16 +49,17 @@ $table-leaderboard-mobile-width: 680px
 		margin-top: 44px
 	h1, h2, h3
 		color: #00bf82
-		font-size: 35px
+		font-size: 30px
 		font-weight: 900
 		letter-spacing: 4.38px
 		line-height: 1.5em
 		text-align: center
 		margin: 0 0 30px
-	.table-holder
-		overflow: visible
 		@media (max-width: $table-leaderboard-mobile-width)
-			overflow: auto
+			font-size: 25px
+	.table-holder
+		overflow: hidden
+		@media (max-width: $table-leaderboard-mobile-width)
 			padding: 0 8px
 	.content-holder
 		margin: auto
@@ -296,7 +298,7 @@ $table-leaderboard-mobile-width: 680px
 				&:before
 					@extend %pseudo-icon
 					content: '\f230'
-					margin-top: -2px
+					margin-top: 0px
 			.stButton
 				background-color: #5058c3
 				&:hover
@@ -345,6 +347,7 @@ $table-leaderboard-mobile-width: 680px
 			padding-left: 20px
 			padding-right: 20px
 			padding-bottom: 29px
+			margin-bottom: 0
 		.subscribe-input-field, .subscribe-button-field
 			display: inline-block
 			vertical-align: middle

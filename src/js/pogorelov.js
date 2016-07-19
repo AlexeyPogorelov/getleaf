@@ -237,23 +237,17 @@ $.fn.validate = function (opt) {
 
 			},
 			addLabel: function ($el) {
-
 				$el.parent().addClass('error');
-
 			},
 			removeLabel: function ($el) {
-
 				$el.parent().removeClass('error');
-
 			},
 			validate: function ($el) {
 
 				if ( $el.hasClass('skip') ) return;
 
 				if ( plg.test( $el.val(), $el.data('validate') ) ) {
-
 					plg.removeLabel( $el );
-
 				} else {
 
 					plg.addLabel( $el );
@@ -266,15 +260,11 @@ $.fn.validate = function (opt) {
 
 				state.errors = 0;
 				DOM.$fields.each( function () {
-
 					plg.validate( $(this) );
-
 				} );
 
 				if (state.errors) {
-
 					e.preventDefault();
-
 				}
 
 			}

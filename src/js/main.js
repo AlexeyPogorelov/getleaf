@@ -153,7 +153,7 @@ $(document).on('ready', function () {
 		// Initializing plugins
 
 		// modals
-		var modals = (function () {
+		var modals = _pogorelov.modals = (function () {
 
 			var plg;
 			$('[data-modal]').on('click', function (e) {
