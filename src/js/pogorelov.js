@@ -51,27 +51,19 @@ bodyOverflow = (function () {
 	return {
 		fixBody: function () {
 
-			$body.width( $body.width() )
+			$body
 				.addClass('fixed');
-
-			$mainNavigation.width( $body.width() );
 
 		},
 		unfixBody: function () {
 
 			$body
-				.css({
-					'width': 'auto'
-				})
 				.removeClass('fixed');
-
-			$mainNavigation.width('');
 
 		},
 		resize: function () {
 
 			this.unfixBody();
-			setInterval(this.fixBody, 10)
 
 		}.bind(this)
 	};
